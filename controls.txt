@@ -1,0 +1,39 @@
+//////////////////////////// CONTROLES /////////////////////
+
+////2-le agregas la clase producto agregado y despues un for con los q tengan la clase agreado para carrito producto agregado
+
+
+-----5-fijate q male mando los tamaños de responsive
+------6 Normalizar texto de entrada en los filtros de input -- OK BUSQUEDA
+-----7/ envio de formularios
+////////8 FUNCIONES CHICAS QUE REUTILICE
+
+9-------accesibilidad con set attribute para el arial hidden
+
+
+
+
+
+////////////////////// P R O B L E M A S //////////
+
+
+
+-CARRITO ASIDE SIN BORRAR PRODUCTOS
+-sombra hover tarjetas
+---centrar bien el checkout
+
+---- no funciona el scroll en el ASIDE
+
+
+
+
+
+/////////////////////////// media query///////////
+.ver{
+    min-width: 20%;
+
+}
+
+.header-tarjetas{
+        justify-content: center;
+}

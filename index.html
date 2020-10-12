@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ada Shop</title>
+</head>
+
+<body>
+  <!-----------------------------------------Inicio Nav header ------------------------------------>
+  <div class="header-nav">
+    <div class="container-header-logo">
+      <img src="img/ada.svg" alt="" />
+      <h2 class="titulo-logo">Ada Shop</h2>
+    </div>
+    <div class="carrito">
+      <a id="click-carrito" href="#"><i class="fas fa-shopping-cart"></i></a>
+      <p class="carro">Carrito<span> 0 </span> items</p>
+    </div>
+  </div>
+  <!------------------------------------- Fin Nav Header ------------------------------------->
+
+  <!------------------------------------- Inicio Header Background Foto ------------------------------------->
+  <div class="background-foto">
+    <h1 class="electronica">ELECTRONICA</h1>
+  </div>
+  <!------------------------------------- Fin Header Background Foto ------------------------------------->
+
+
+
+  <!------------------------------------- Inicio Carrito Aside------------------------------------->
+  <div class="overlay ocultar"></div>
+  <section id="carrito" class="hidden carrito-aside">
+    <button id="cerrar-carrito"><i class="fas fa-times-circle"></i></button>
+    <h2 class="titulo-menu-carrito">Carrito</h2>
+    <div class="cuerpo-carrito">
+      <p><span>0</span>producto(s) agregados(s)</p>
+      <div class="contenido-carrito"></div>
+      <div class="productos-agregados-carrito">
+
+        <article class="tarjeta-carrito ocultar" data-nombre="auriculares-sony" data-precio="2355">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto5.png" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Auriculares Sony</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $2355</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="consola-nintendo-switch" data-precio="37699">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto6.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Consola Nintendo</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $37699</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="celular-redmi" data-precio="2245">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto1.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Celular Redmi</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $2245</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="play-station-4" data-precio="59999">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto2.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Play Station 4</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $59999</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="camara-nikon" data-precio="82999">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto3.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Cámara Nikon</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $82999</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="notebook-asus" data-precio="125999">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto3.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Notebook Asus</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $125999</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="notebook-msi" data-precio="215099">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto-7.png" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Notebook Msi</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $215099</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="auriculares-philips" data-precio="2159">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto8.png" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Auriculares Philips</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $2159</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="macbook" data-precio="249000">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto9.png" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Macbook</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $249000</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="iphone" data-precio="75000">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto10.jpeg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Iphone</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $75000</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="xbox-one" data-precio="95000">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto11.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Xbox</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $95000</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-carrito ocultar" data-nombre="mouse-gamer" data-precio="900">
+          <div class="producto-en-carrito-miniatura ">
+            <img src="img/objeto12.jpg" alt="">
+          </div>
+          <div class="contenedor-especificaciones-miniatura">
+            <div class="especifiaciones-titulo-miniatura">
+              <h3>Mouse Gamer</h3>
+              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="especificaciones-precio-input-miniatura">
+              <label>
+                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number">
+                Unidades
+              </label>
+              <p>Precio $900</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <p>Subtotal</p>
+    </div>
+    <footer class="contenedor-botones-carrito">
+      <button class="boton-comprar-carrito" id="comprar-carrito"><a href="
+          #checkout-overlay">Comprar</a></button>
+      <button class="boton-vaciar-carrito" id="vaciar-carrito">Vaciar</button>
+    </footer>
+
+  </section>
+  <section class="hidden vaciar-carrito-section">
+    <h1>Estás por vaciar el carrito, ¿quieres continuar?</h1>
+    <footer class="botones-vaciar-carrito-footer">
+      <button class="boton-cancelar-vaciar-carrito">Cancelar</button>
+      <button class="boton-vaciar-carrito-confirmacion">Vaciar</button>
+    </footer>
+  </section>
+
+
+
+  <!------------------------------------- Fin Carrito Overlay ------------------------------------->
+
+
+  <!-------------------------------------Inicio Producto en Carrito------------------------------------->
+  <!------------------------------------- Fin Producto en Carrito ------------------------------------->
+
+  <!-------------------------------------Inicio Checkout Carrito------------------------------------->
+  <section class="checkout ocultar-checkout">
+    <div class="contenedor-flex">
+
+      <form class="formulario-checkout" action="">
+        <div class="titulo-checkout" id="checkout-overlay">
+          <h1>Checkout</h1>
+        </div>
+        <div class="contenedor-checkout">
+
+          <div class="contenedor-columnas">
+            <div class="contenedor-datos-personales">
+              <h5 class="titulo-datos-personales-checkout">Datos Personales</h5>
+              <label class="datos-personales" for="nombre-apellido">
+                Nombre y Apellido
+                <input class="campos-datos-personales" id="nombre-apellido" type="text"
+                  placeholder="Ingrese su nombre aquí" name="Nombre y Apellido" />
+              </label>
+              <label class="datos-personales" for="email">
+                Email
+                <input class="campos-datos-personales" id="email" type="email" placeholder="Ingrese su Email"
+                  name="Direccion de Email" id="" />
+              </label>
+            </div>
+
+            <div class="contenedor-metodos-de-pago">
+              <h5 class="titulo-opciones-de-pago-checkout">Opciones de Pago</h5>
+              <label class="metodos-de-pago" for="efectivo-debito">
+                <input type="radio" name="metodo-de-pago" id="efectivo-debito" value="efectivo-debito" />
+                Efectivo/Debito
+              </label>
+              <label class="metodos-de-pago" for="credito">
+                <input type="radio" name="metodo-de-pago" id="credito" value="tarjeta-credito" />
+                Tarjeta de Credito
+              </label>
+              <label class="metodos-de-pago" for="envio">
+                <input type="checkbox" id="envio" name="envio" />
+                Lo quiero con Envio
+              </label>
+              <label class="metodos-de-pago" for="descuento">
+                <input type="checkbox" id="descuento" name="descuento" />
+                Tarjeta de Descuento
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+      <section class="resumen-checkout">
+        <h5 class="titulo-resumen-checkout">Resumen</h5>
+        <div>
+          <p class="subtotal-checkout">
+            Subtotal $ <span class="subtotal-checkout-importe">0</span>
+          </p>
+          <p class="descuento-checkout">
+            Descuento 10% $<span class="descuento-checkout-importe">0</span>
+          </p>
+          <p class="envio-checkout">
+            Envío $ <span class="envio-checkout-importe">0</span>
+          </p>
+          <p class="recargo-checkout">
+            Recargo $ <span class="recargo-checkout-importe">0</span>
+          </p>
+          <p class="total-checkout"">
+                Total:$ <span class=" total-checkout-importe">0</span>
+          </p>
+        </div>
+      </section>
+    </div>
+    <footer class="footer-checkout">
+      <button class="botones-checkout" id="seguir-comprando-checkout">Seguir Comprando</button>
+      <button class="botones-checkout" id="finalizar-compra-checkout">Finalizar</button>
+    </footer>
+
+  </section>
+  <!-------------------------------------Final Checkout Carrito------------------------------------->
+
+
+  <!-------------------------------------Inicio Seccion Principal------------------------------------->
+  <section class="main">
+    <!-------------------------------------Inicio Filtros de Busqueda------------------------------------->
+    <aside class="filtros">
+      <div class="encabezado-filtros">
+        <h2>Filtros</h2>
+        <div class="limpiar">
+          <button id="limpiar"><i class="fas fa-trash-alt"></i>Limpiar </button>
+        </div>
+      </div>
+      <div class="container-busqueda">
+        <h3>Búsqueda</h3>
+        <label class="contenedor-input-busqueda" for="busqueda" aria-label="Búsqueda">
+          <input placeholder="Ingresa tu búsqueda" id="busqueda" class="busqueda" type="text">
+          <i class="fas fa-search"></i>
+        </label>
+      </div>
+      <!-- --------------------------------------------Fin Filtros de Busqueda ---------------------------------------------->
+
+      <!------------------------------------------Inicio Filtro Categoria de Productos--------------------------------------->
+      <div class="categoria">
+        <h3>Categoria</h3>
+        <form class="form-filtros" action="">
+          <label class="nombre-categorias" for="consolas"> <input type="checkbox" name="consolas" id="consolas"
+              class="check-filtro-categoria" /> Consolas
+          </label>
+          <label class="nombre-categorias" for="notebooks"> <input type="checkbox" name="notebook" id="notebooks"
+              class="check-filtro-categoria" />
+            Notebooks</label>
+          <label class="nombre-categorias" for="camaras"> <input type="checkbox" name="camaras" id="camaras"
+              class="check-filtro-categoria" />
+            Camaras</label>
+          <label class="nombre-categorias" for="celulares"> <input type="checkbox" id="celulares" name="celulares"
+              class="check-filtro-categoria" />
+            Celulares</label>
+          <label class="nombre-categorias" for="accesorios"> <input type="checkbox" name="accesorios" id="accesorios"
+              class="check-filtro-categoria" />
+            Accesorios</label>
+      </div>
+      <!-----------------------------------------------Fin Filtro Categoria de Productos------------------------------------->
+
+      <!--------------------------------------------Inicio Filtro Puntaje de Productos--------------------------------------->
+      <div class="contenedor-filtro-puntaje">
+        <h3 class="titulo-puntaje">Puntaje</h3>
+        <label for="5-estrellas">
+          <input type="checkbox" name="cinco-estrellas" value="5" id="5-estrellas" class="check-filtro-puntaje" />
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          (5)</label>
+        <label for="4-estrellas">
+          <input type="checkbox" name="cuatro-estrellas" value="4" id="4-estrellas" class="check-filtro-puntaje" />
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          (4)</label>
+        <label for="3-estrellas">
+          <input type="checkbox" name="tres-estrellas" value="3" id="3-estrellas" class="check-filtro-puntaje" />
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          (3)</label>
+        <label for="2-estrellas">
+          <input type="checkbox" name="dos-estrellas" value="2" id="2-estrellas" class="check-filtro-puntaje" />
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          (2)</label>
+
+        <label for="1-estrella">
+          <input type="checkbox" name="una-estrella" value="1" id="1-estrella" class="check-filtro-puntaje" />
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+
+          (1)</label>
+      </div>
+      <!------------------------------------------------- Fin Filtro Puntaje de Productos------------------------------------>
+      </div>
+      </div>
+      </form>
+    </aside>
+
+    <!------------------------------------------------------Inicio Seccion Productos----------------------------------------->
+    <div class="seccion-tarjetas">
+      <header class="header-tarjetas">
+        <div>
+          <p class="mostrando-cantidad-de-productos">
+            Mostrando<span class="nro-mostrado"> 0 </span>producto(s) de <span class="total-nros"> 0 </span>
+          </p>
+        </div>
+        <div class="ver">
+          <p class="ver-como">Ver Como</p>
+          <button id="vista-grilla"><i class="fas fa-th"></i></button>
+          <button id="vista-lista"><i class="fas fa-list-ul"></i></button>
+        </div>
+      </header>
+      <!-------------------------------------------Inicio Sección Tarjetas------------------------------------------->
+      <div class="contenedor-tarjetas">
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="consola-nintendo-switch" data-rating="1"
+          data-precio="37699" data-categoria="consolas">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto6.jpg" alt="" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Consola Nintendo Switch</h3>
+            <p class="precio-producto">$37699</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </span>
+            <button data-nombre="consola-nintendo-switch" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="auriculares-sony" data-rating="1" data-precio="2355"
+          data-categoria="accesorios">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto5.png" alt="" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Auriculares Sony</h3>
+            <p class="precio-producto">$2355</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </span>
+            <button data-nombre="auriculares-sony" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="celular-redmi" data-rating="4" data-precio="2245"
+          data-categoria="celulares">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto1.jpg" alt="" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Celular Redmi</h3>
+            <p class="precio-producto">$2245</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </span>
+            <button data-nombre="celular" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="play-station-4" data-rating="5" data-precio="59999"
+          data-categoria="consolas">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto2.jpg" alt="" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Play Station 4</h3>
+            <p class="precio-producto">$59999</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <button data-nombre="play-station-4" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="camara-nikon" data-rating="5" data-precio="82999"
+          data-categoria="camaras">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto3.jpg" alt="" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Cámara Nikon</h3>
+            <p class="precio-producto">$82999</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <button data-nombre="camara-nikon" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="notebook-asus" data-rating="3" data-precio="125999"
+          data-categoria="notebook">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto4.png" alt="" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Notebook Asus</h3>
+            <p class="precio-producto">$125999</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </span>
+            <button data-nombre="notebook-asus" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="notebook-msi" data-rating="5" data-precio="215099"
+          data-categoria="notebook">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto-7.png" alt="notebook msi" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Notebook Msi</h3>
+            <p class="precio-producto">$215099</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <button data-nombre="notebook-msi" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="auriculares-philips" data-rating="5"
+          data-precio="2159" data-categoria="accesorios">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto8.png" alt="auriculares philips" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Auriculares Philips</h3>
+            <p class="precio-producto">$2159</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <button data-nombre="auriculares-philips" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="macbook" data-rating="5" data-precio="249000"
+          data-categoria="notebook">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto9.png" alt="macbook" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Macbook</h3>
+            <p class="precio-producto">$249000</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <button data-nombre="macbook" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="iphone" data-rating="5" data-precio="75000"
+          data-categoria="celulares">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto10.jpeg" alt="iphone" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Iphone</h3>
+            <p class="precio-producto">$75000</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <button data-nombre="iphone" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="xbox-one" data-rating="4" data-precio="95000"
+          data-categoria="consolas">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto11.jpg" alt="xbox one" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Xbox One</h3>
+            <p class="precio-producto">$95000</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </span>
+            <button data-nombre="xbox-one" class="comprar">Comprar</button>
+          </div>
+        </article>
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="mouse-gamer" data-rating="4" data-precio="900"
+          data-categoria="accesorios">
+          <div class="div-foto">
+            <img class="producto" src="img/objeto12.jpg" alt="mouse gamer" />
+          </div>
+          <div class="div-especificaciones">
+            <h3 class="titulo-producto">Mouse Gamer</h3>
+            <p class="precio-producto">$900</p>
+            <p id="descripcion-producto-vista-lista" class="vista-normal"> Lorem ipsum dolor sit amet consectetur
+              adipisicing
+              elit.
+              Quia et iste natus? Aliquam provident aspernatur eius commodi
+              et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
+            <span class="rating-producto">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </span>
+            <button data-nombre="mouse-gamer" class="comprar">Comprar</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!--------------------------------------------Fin Seccion Productos---------------------------------------->
+
+  <!---------------------------------------- Inicio Footer---------------------------------------->
+  <footer class="main-footer">
+    <div class="logo-firma-footer">
+      <img class="logo-footer" src="img/ada.svg" alt="logo ada shop">
+      <p class="firma-footer">ADA SHOP - Gracias por
+        visitarnos</p>
+    </div>
+
+    <div class="end-menu-footer"><i class="fas fa-heart"></i></div>
+    <p> Hecho por <span class="firma-personal-footer">Ana Esposito</span></p>
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/ana-esposito-5a875184/" class="link-footer dos">
+        <i id="link-footer" class="fab devicon-linkedin-plain"></i></a>
+      <a href="https://wa.link/m7p5ed" class="link-footer dos"><i id="link-footer" class="fab fa-whatsapp"></i></a>
+      <a href="https://github.com/anaesposito" class="link-footer dos"><i id="link-footer"
+          class="fab devicon-github-plain"></i></a>
+    </div>
+  </footer>
+  <!---------------------------------------- Fin Footer---------------------------------------->
+  <script src="main.js"></script>
+</body>
+
+</html>
