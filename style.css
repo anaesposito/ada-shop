@@ -134,7 +134,7 @@ p {
   font-size: 32px;
 }
 
-.cuerpo-carrito {
+.carrito-contenido {
   display: flex;
   flex-direction: column;
   margin: 30px;
@@ -227,7 +227,7 @@ p {
 .producto-en-carrito-miniatura > img {
   width: 100%;
 }
-.input-cantidad-carrito {
+.input-cantidad-en-carrito {
   width: 20%;
   text-align: center;
 }

@@ -3,58 +3,60 @@
 
 <head>
   <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ada Shop</title>
 </head>
 
 <body>
-  <!-----------------------------------------Inicio Nav header ------------------------------------>
-  <div class="header-nav">
+  <!------------------------------------------------Inicio header ----------------------------------------->
+  <header class="header-nav">
     <div class="container-header-logo">
-      <img src="img/ada.svg" alt="" />
+      <img src="img/ada.svg" alt="logo ada shop" role="img" />
       <h2 class="titulo-logo">Ada Shop</h2>
     </div>
     <div class="carrito">
-      <a id="click-carrito" href="#"><i class="fas fa-shopping-cart"></i></a>
+      <button id="click-carrito" href="#" aria-label="carrito de compras"><i aria-hidden="true"
+          class="fas fa-shopping-cart"></i></button>
       <p class="carro">Carrito<span> 0 </span> items</p>
     </div>
-  </div>
-  <!------------------------------------- Fin Nav Header ------------------------------------->
+  </header>
+  <!------------------------------------------------- Fin Header ------------------------------------------>
 
-  <!------------------------------------- Inicio Header Background Foto ------------------------------------->
-  <div class="background-foto">
+  <!------------------------------------------ Inicio Background Foto ------------------------------------->
+  <div class="background-foto" role="img" aria-label="imagen de fondo con productos electronicos">
     <h1 class="electronica">ELECTRONICA</h1>
   </div>
-  <!------------------------------------- Fin Header Background Foto ------------------------------------->
+  <!-------------------------------------- Fin Header Background Foto ------------------------------------->
 
 
 
-  <!------------------------------------- Inicio Carrito Aside------------------------------------->
+  <!------------------------------------------ Inicio Carrito Aside---------------------------------------->
   <div class="overlay ocultar"></div>
-  <section id="carrito" class="hidden carrito-aside">
-    <button id="cerrar-carrito"><i class="fas fa-times-circle"></i></button>
+  <main id="carrito" class="hidden carrito-aside" role="main">
+    <button aria-label="cerrar carrito" id="cerrar-carrito"><i aria-hidden="true"
+        class="fas fa-times-circle"></i></button>
     <h2 class="titulo-menu-carrito">Carrito</h2>
-    <div class="cuerpo-carrito">
+    <div class="carrito-contenido">
       <p><span>0</span>producto(s) agregados(s)</p>
-      <div class="contenido-carrito"></div>
-      <div class="productos-agregados-carrito">
-
-        <article class="tarjeta-carrito ocultar" data-nombre="auriculares-sony" data-precio="2355">
+      <section class="productos-agregados-carrito">
+        <article class="tarjeta-carrito ocultar" data-nombre="auriculares-sony" data-precio="2355"
+          aria-label="producto agregado auriculares sony">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto5.png" alt="">
+            <img src="img/objeto5.png" alt="Auriculares Sony">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Auriculares Sony</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -65,16 +67,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="consola-nintendo-switch" data-precio="37699">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto6.jpg" alt="">
+            <img src="img/objeto6.jpg" alt="Consola Nintendo">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Consola Nintendo</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -85,16 +88,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="celular-redmi" data-precio="2245">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto1.jpg" alt="">
+            <img src="img/objeto1.jpg" alt="Celular Redmi">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Celular Redmi</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -105,16 +109,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="play-station-4" data-precio="59999">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto2.jpg" alt="">
+            <img src="img/objeto2.jpg" alt="Play Station">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Play Station 4</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -125,16 +130,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="camara-nikon" data-precio="82999">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto3.jpg" alt="">
+            <img src="img/objeto3.jpg" alt="Camara Nikon">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Cámara Nikon</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -145,16 +151,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="notebook-asus" data-precio="125999">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto3.jpg" alt="">
+            <img src="img/objeto4.png" alt="Notebook Asus">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Notebook Asus</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -165,16 +172,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="notebook-msi" data-precio="215099">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto-7.png" alt="">
+            <img src="img/objeto-7.png" alt="Notebook Msi">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Notebook Msi</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -185,16 +193,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="auriculares-philips" data-precio="2159">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto8.png" alt="">
+            <img src="img/objeto8.png" alt="Auriculares Philips">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Auriculares Philips</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -205,16 +214,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="macbook" data-precio="249000">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto9.png" alt="">
+            <img src="img/objeto9.png" alt="Macbook">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Macbook</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -225,16 +235,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="iphone" data-precio="75000">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto10.jpeg" alt="">
+            <img src="img/objeto10.jpeg" alt="Iphone">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Iphone</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -245,16 +256,17 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="xbox-one" data-precio="95000">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto11.jpg" alt="">
+            <img src="img/objeto11.jpg" alt="Xbox One">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
-              <h3>Xbox</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <h3>Xbox One</h3>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
@@ -265,62 +277,64 @@
 
         <article class="tarjeta-carrito ocultar" data-nombre="mouse-gamer" data-precio="900">
           <div class="producto-en-carrito-miniatura ">
-            <img src="img/objeto12.jpg" alt="">
+            <img src="img/objeto12.jpg" alt="Mouse Gamer">
           </div>
           <div class="contenedor-especificaciones-miniatura">
             <div class="especifiaciones-titulo-miniatura">
               <h3>Mouse Gamer</h3>
-              <button id="trash" class="button"><i class="fas fa-trash"></i></button>
+              <button aria-label="eliminar producto del carrito" id="trash" class="button"><i aria-hidden="true"
+                  class="fas fa-trash"></i></button>
             </div>
             <div class="especificaciones-precio-input-miniatura">
               <label for="cantidad-unidades-en-carrito">
-                <input class="input-cantidad-carrito" name="cantidad-unidades" min="0" value="1" type="number"
+                <input class="input-cantidad-en-carrito" name="cantidad-unidades" min="0" value="1" type="number"
                   id="cantidad-unidades-en-carrito">
                 Unidades
               </label>
               <p>Precio $900</p>
             </div>
-          </div>
         </article>
 
-      </div>
-      <p>Subtotal</p>
+      </section>
+
+
+    </div>
+    <p class="subtotal-carrito-Aside">Subtotal</p>
     </div>
     <footer class="contenedor-botones-carrito">
-      <button class="boton-comprar-carrito" id="comprar-carrito"><a href="
-          #checkout-overlay">Comprar</a></button>
-      <button class="boton-vaciar-carrito" id="vaciar-carrito">Vaciar</button>
+      <button class="boton-comprar-carrito" id="comprar-carrito"><a href="#checkout-overlay">Comprar</a></button>
+      <button aria-label="vaciar carrito" class="boton-vaciar-carrito" id="vaciar-carrito">Vaciar</button>
     </footer>
 
-  </section>
-  <section class="hidden vaciar-carrito-section">
+  </main>
+  <!--------------------------------------------- Fin Carrito Aside --------------------------------------->
+
+  <!------------------------------------- Inicio Confirmar Vaciar Carrito --------------------------------->
+  <section role="alert" class="hidden vaciar-carrito-section">
     <h1>Estás por vaciar el carrito, ¿quieres continuar?</h1>
-    <footer class="botones-vaciar-carrito-footer">
-      <button class="boton-cancelar-vaciar-carrito">Cancelar</button>
-      <button class="boton-vaciar-carrito-confirmacion">Vaciar</button>
-    </footer>
+    <div class="botones-vaciar-carrito-footer">
+      <button aria-label="cancelar vaciar carrito" class="boton-cancelar-vaciar-carrito">Cancelar</button>
+      <button aria-label="confirmar vaciar carrito" class="boton-vaciar-carrito-confirmacion">Vaciar</button>
+    </div>
   </section>
+  <!-------------------------------------- Fin Confirmar Vaciar Carrito ----------------------------------->
 
 
 
-  <!------------------------------------- Fin Carrito Overlay ------------------------------------->
 
 
-  <!-------------------------------------Inicio Producto en Carrito------------------------------------->
-  <!------------------------------------- Fin Producto en Carrito ------------------------------------->
 
   <!-------------------------------------Inicio Checkout Carrito------------------------------------->
-  <section class="checkout ocultar-checkout">
+  <main class="checkout ocultar-checkout">
     <div class="contenedor-flex">
 
       <form class="formulario-checkout" action="">
         <div class="titulo-checkout" id="checkout-overlay">
           <h1>Checkout</h1>
         </div>
-        <div class="contenedor-checkout">
-
+        <section class="contenedor-checkout">
           <div class="contenedor-columnas">
-            <div class="contenedor-datos-personales">
+            <article class="contenedor-datos-personales">
               <h5 class="titulo-datos-personales-checkout">Datos Personales</h5>
               <label class="datos-personales" for="nombre-apellido">
                 Nombre y Apellido
@@ -332,9 +346,9 @@
                 <input class="campos-datos-personales" id="email" type="email" placeholder="Ingrese su Email"
                   name="Direccion de Email" id="" />
               </label>
-            </div>
+            </article>
 
-            <div class="contenedor-metodos-de-pago">
+            <article class="contenedor-metodos-de-pago">
               <h5 class="titulo-opciones-de-pago-checkout">Opciones de Pago</h5>
               <label class="metodos-de-pago" for="efectivo-debito">
                 <input type="radio" name="metodo-de-pago" id="efectivo-debito" value="efectivo-debito" />
@@ -352,9 +366,9 @@
                 <input type="checkbox" id="descuento" name="descuento" />
                 Tarjeta de Descuento
               </label>
-            </div>
+            </article>
           </div>
-        </div>
+        </section>
 
 
       </form>
@@ -380,11 +394,12 @@
       </section>
     </div>
     <footer class="footer-checkout">
-      <button class="botones-checkout" id="seguir-comprando-checkout">Seguir Comprando</button>
-      <button class="botones-checkout" id="finalizar-compra-checkout">Finalizar</button>
+      <button aria-label="Seguir comprando" class="botones-checkout" id="seguir-comprando-checkout">Seguir
+        Comprando</button>
+      <button aria-label="Finalizar Compra" class="botones-checkout" id="finalizar-compra-checkout">Finalizar</button>
     </footer>
 
-  </section>
+  </main>
   <!-------------------------------------Final Checkout Carrito------------------------------------->
 
 
@@ -783,7 +798,7 @@
   <!---------------------------------------- Inicio Footer---------------------------------------->
   <footer class="main-footer">
     <div class="logo-firma-footer">
-      <img class="logo-footer" src="img/ada.svg" alt="logo ada shop">
+      <img class="logo-footer" src="img/ada.svg" alt="logo ada shop" role="img">
       <p class="firma-footer">ADA SHOP - Gracias por
         visitarnos</p>
     </div>
