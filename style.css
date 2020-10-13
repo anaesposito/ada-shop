@@ -275,7 +275,7 @@ p {
 .checkout {
   transform: translateY(0);
   min-width: 800px;
-  top: 25%;
+  top: 10%;
   right: 25%;
   position: fixed;
   background-color: white;
@@ -417,6 +417,12 @@ p {
   font-size: 15px;
   background-color: transparent;
 }
+#cerrar-filtros-responsive,
+.cerrar-filtros-responsive,
+.filtros-responsive {
+  display: none;
+}
+
 .fa-trash-alt {
   margin-right: 5px;
 }
@@ -739,6 +745,12 @@ p {
   .encabezado-filtros {
     flex-direction: column;
   }
+  #cerrar-filtros-responsive,
+  .cerrar-filtros-responsive,
+  .filtros-responsive {
+    display: inline-block;
+  }
+
   .cerrar-filtros-responsive {
     background-color: transparent;
     text-align: right;
@@ -775,6 +787,23 @@ p {
   }
   .contenedor-botones-carrito {
     max-height: 30%;
+  }
+  .checkout {
+    width: 100%;
+    right: 0%;
+    min-width: 0;
+    max-width: 570px;
+    top: 0%;
+    background-color: white;
+
+    z-index: 3;
+    padding: 20px;
+  }
+  .resumen-checkout {
+    min-width: 250px;
+  }
+  .footer-checkout {
+    margin: 10px 0 60px;
   }
 }
 
