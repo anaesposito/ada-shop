@@ -400,46 +400,49 @@
     </footer>
 
   </main>
-  <!-------------------------------------Final Checkout Carrito------------------------------------->
+  <!-----------------------------------------Final Checkout Carrito---------------------------------------->
 
 
-  <!-------------------------------------Inicio Seccion Principal------------------------------------->
+  <!------------------------------------------Inicio Seccion Principal------------------------------------->
   <section class="main">
-    <!-------------------------------------Inicio Filtros de Busqueda------------------------------------->
+    <!-------------------------------------Inicio Filtro de Busqueda--------------------------------------->
     <aside class="filtros">
       <div class="encabezado-filtros">
+        <button class="cerrar-filtros-responsive" aria-label="cerrar filtros"><i aria-hidden="true"
+            class="fas fa-times-circle"></i></button>
         <h2>Filtros</h2>
         <div class="limpiar">
-          <button aria-label="Limpiar Filtros de Búsqueda" id="limpiar"><i class="fas fa-trash-alt"></i>Limpiar
+          <button aria-label="Limpiar Filtros de Búsqueda" id="limpiar"><i aria-hidden="true"
+              class="fas fa-trash-alt"></i>Limpiar
           </button>
         </div>
       </div>
       <div class="container-busqueda">
         <h3>Búsqueda</h3>
-        <label class="contenedor-input-busqueda" for="busqueda" aria-label="Búsqueda">
+        <label class="contenedor-input-busqueda" for="busqueda">
           <input role="search" placeholder="Ingresa tu búsqueda" id="busqueda" class="busqueda" type="text">
-          <i class="fas fa-search"></i>
+          <i aria-hidden="true" class="fas fa-search"></i>
         </label>
       </div>
-      <!-- --------------------------------------------Fin Filtros de Busqueda ---------------------------------------------->
+      <!-- -----------------------------Fin Filtro de Busqueda -------------------------------------------->
 
-      <!------------------------------------------Inicio Filtro Categoria de Productos--------------------------------------->
+      <!-----------------------------------------Inicio Filtro Categoria de Productos---------------------->
       <div class="categoria">
         <h3>Categoria</h3>
         <form class="form-filtros" action="">
-          <label class="nombre-categorias" for="consolas"> <input type="checkbox" name="consolas" id="consolas"
+          <label class="nombre-categorias" for="consolas"> <input type="checkbox" value="consolas" id="consolas"
               class="check-filtro-categoria" /> Consolas
           </label>
-          <label class="nombre-categorias" for="notebooks"> <input type="checkbox" name="notebook" id="notebooks"
+          <label class="nombre-categorias" for="notebooks"> <input type="checkbox" value="notebook" id="notebooks"
               class="check-filtro-categoria" />
             Notebooks</label>
-          <label class="nombre-categorias" for="camaras"> <input type="checkbox" name="camaras" id="camaras"
+          <label class="nombre-categorias" for="camaras"> <input type="checkbox" value="camaras" id="camaras"
               class="check-filtro-categoria" />
             Camaras</label>
-          <label class="nombre-categorias" for="celulares"> <input type="checkbox" id="celulares" name="celulares"
+          <label class="nombre-categorias" for="celulares"> <input type="checkbox" value="celulares" id="celulares"
               class="check-filtro-categoria" />
             Celulares</label>
-          <label class="nombre-categorias" for="accesorios"> <input type="checkbox" name="accesorios" id="accesorios"
+          <label class="nombre-categorias" for="accesorios"> <input type="checkbox" value="accesorios" id="accesorios"
               class="check-filtro-categoria" />
             Accesorios</label>
       </div>
@@ -500,21 +503,26 @@
     <!------------------------------------------------------Inicio Seccion Productos----------------------------------------->
     <div class="seccion-tarjetas">
       <header class="header-tarjetas">
-        <div>
+        <div class="contenedor-cantidad-de-productos">
           <p class="mostrando-cantidad-de-productos">
             Mostrando<span class="nro-mostrado"> 0 </span>producto(s) de <span class="total-nros"> 0 </span>
           </p>
+          <button class="filtros-responsive" arial-label="mostrar filtros" class="ocultar"><i aria-hidden="true"
+              class="fas fa-filter"></i>
+            Filtros</button>
         </div>
         <div class="ver">
           <p class="ver-como">Ver Como</p>
-          <button id="vista-grilla"><i class="fas fa-th"></i></button>
-          <button id="vista-lista"><i class="fas fa-list-ul"></i></button>
+          <button aria-label="activar vista grilla" id="vista-grilla"><i aria-hidden="true"
+              class="fas fa-th"></i></button>
+          <button aria-label="activar vista lista" id="vista-lista"><i aria-hidden="true"
+              class="fas fa-list-ul"></i></button>
         </div>
       </header>
       <!-------------------------------------------Inicio Sección Tarjetas------------------------------------------->
       <div class="contenedor-tarjetas">
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="consola-nintendo-switch" data-rating="1"
-          data-precio="37699" data-categoria="consolas">
+        <article aria-label="Consola Nintendo Switch" id="tarjeta-producto" class="tarjeta"
+          data-nombre="consola-nintendo-switch" data-rating="1" data-precio="37699" data-categoria="consolas">
           <div class="div-foto">
             <img class="producto" src="img/objeto6.jpg" alt="" />
           </div>

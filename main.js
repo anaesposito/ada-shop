@@ -21,7 +21,7 @@ limpiar.onclick = () => {
 //.................Inicio Filtro Busqueda...................//
 const tarjetas = document.querySelectorAll(".tarjeta");
 
-const filtrarBusqueda = (busqueda.oninput = () => {
+const filtrarBusqueda = () => {
   for (let tarjeta of tarjetas) {
     let titulo = tarjeta.dataset.nombre;
     let consulta = busqueda.value.toLowerCase();
@@ -35,8 +35,8 @@ const filtrarBusqueda = (busqueda.oninput = () => {
       tarjeta.classList.remove("ocultar");
     }
   }
-});
-
+};
+busqueda.oninput = filtrarBusqueda;
 //....................Fin Filtro Busqueda...................//
 
 //.................Inicio Filtro Categoria..................//
@@ -74,7 +74,7 @@ const checkboxSeleccionadoCategoria = () => {
 const coincideCategoria = (tarjeta) => {
   const categoria = tarjeta.dataset.categoria;
   for (let checkboxCategoria of checkboxesCategoria) {
-    if (checkboxCategoria.name === categoria && checkboxCategoria.checked) {
+    if (checkboxCategoria.value === categoria && checkboxCategoria.checked) {
       return true;
     }
   }
@@ -121,80 +121,80 @@ const coincidePuntaje = (tarjeta) => {
 };
 
 //.................Fin Filtro checkboxes....................//
-//.................Inicio Filtros Simultaneos...............//
-const hayBusqueda = () => {
-  if (busqueda.value) {
-    return true;
-  } else {
-    return false;
-  }
-};
-const pasaFiltroBusqueda = (tarjeta) => {
-  if (hayBusqueda()) {
-    if (filtrarBusqueda(tarjeta)) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return true;
-  }
-};
+// //.................Inicio Filtros Simultaneos...............//
+// const hayBusqueda = () => {
+//   if (busqueda.value) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+// const pasaFiltroBusqueda = (tarjeta) => {
+//   if (hayBusqueda()) {
+//     if (filtrarBusqueda(tarjeta)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   } else {
+//     return true;
+//   }
+// };
 
-const hayCategoria = () => {
-  for (let checkboxCategoria of checkboxesCategoria) {
-    if (checkboxCategoria.checked) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-};
-const pasaFiltroCategoria = (tarjeta) => {
-  if (hayCategoria()) {
-    if (filtrarPorCheckboxesCategoria(tarjeta)) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return true;
-  }
-};
+// const hayCategoria = () => {
+//   for (let checkboxCategoria of checkboxesCategoria) {
+//     if (checkboxCategoria.checked) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// };
+// const pasaFiltroCategoria = (tarjeta) => {
+//   if (hayCategoria()) {
+//     if (filtrarPorCheckboxesCategoria(tarjeta)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   } else {
+//     return true;
+//   }
+// };
 
-const hayPuntaje = () => {
-  for (let checkboxPuntaje of checkboxesPuntaje) {
-    if (checkboxPuntaje.checked) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-};
+// const hayPuntaje = () => {
+//   for (let checkboxPuntaje of checkboxesPuntaje) {
+//     if (checkboxPuntaje.checked) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// };
 
-const pasaFiltroPuntaje = (tarjeta) => {
-  if (hayPuntaje()) {
-    if (filtrarPorCheckboxesPuntaje(tarjeta)) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return true;
-  }
-};
+// const pasaFiltroPuntaje = (tarjeta) => {
+//   if (hayPuntaje()) {
+//     if (filtrarPorCheckboxesPuntaje(tarjeta)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   } else {
+//     return true;
+//   }
+// };
 
-const pasaFiltros = (tarjeta) => {
-  if (
-    pasaFiltroBusqueda(tarjeta) &&
-    pasaFiltroCategoria(tarjeta) &&
-    pasaFiltroPuntaje(tarjeta)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// const pasaFiltros = (tarjeta) => {
+//   if (
+//     pasaFiltroBusqueda(tarjeta) &&
+//     pasaFiltroCategoria(tarjeta) &&
+//     pasaFiltroPuntaje(tarjeta)
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
 //.................Fin Filtros Simultaneos..................//
 
@@ -303,6 +303,7 @@ clickCarrito.onclick = () => {
 botonCerrarCarrito.onclick = () => {
   asideCarrito.classList.add("hidden");
   overlay.classList.add("ocultar");
+  body.classList.remove("overflow");
 };
 
 //..................Fin Ocultar Carrito Aside...............//
@@ -430,3 +431,17 @@ const calcularTotal = () => {
 
 // falta vincular al total de carrito sumado
 //..................Fin Funciones Checkout.............//
+//..................Inicio Filtros Responsive.............//
+const botonFiltrosResponsive = document.querySelector(".filtros-responsive");
+const asideFiltros = document.querySelector(".filtros");
+const botonCerrarFiltrosReponsive = document.querySelector(
+  ".cerrar-filtros-responsive"
+);
+
+botonFiltrosResponsive.onclick = () => {
+  asideFiltros.classList.add("mostrar-filtros-responsive");
+};
+
+botonCerrarFiltrosReponsive.onclick = () => {
+  asideFiltros.classList.remove("mostrar-filtros-responsive");
+};
