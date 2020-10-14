@@ -344,6 +344,8 @@ botonFinalizarCompraCheckout.onclick = () => {
   carritoCheckout.classList.add("ocultar-checkout");
   asideCarrito.classList.add("hidden");
   overlay.classList.add("ocultar");
+  body.classList.remove("overflow");
+  overlay.classList.remove("overlay-aumentado");
 };
 
 botonSeguirComprandoCheckout.onclick = () => {

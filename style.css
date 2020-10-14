@@ -481,14 +481,13 @@ p {
 .header-tarjetas {
   background: #fff;
   display: flex;
-  margin: 23px;
+  margin: 23px 10px 23px;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   padding: 25px 30px;
   font-size: 14px;
   margin-top: 6%;
-  /* responsive */
   flex-wrap: wrap;
   max-height: 120px;
   min-width: 400px;
@@ -518,6 +517,7 @@ p {
 }
 .ver-como {
   font-weight: regular;
+  text-align: center;
 }
 .vista-normal {
   display: none;
@@ -769,9 +769,8 @@ p {
   .header-tarjetas {
     margin: 2% 0% 2%;
     min-width: auto;
-    max-width: 570px;
+
     flex-wrap: nowrap;
-    padding: 0 2% 0;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -805,20 +804,220 @@ p {
   .footer-checkout {
     margin: 10px 0 60px;
   }
+  .vaciar-carrito-section {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    right: 0%;
+  }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .main {
+    padding: 0;
+  }
+  .header-nav {
+    margin: 0;
+  }
+  .fa-shopping-cart {
+    padding: 0;
+  }
+  .carro {
+    padding: 0;
+  }
+  .carrito {
+    padding: 0 15px 0;
+    margin: 0;
+  }
+  .filtros {
+    width: 100%;
+    height: 100%;
+    max-width: 270px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5000;
+    padding: 40px 40px 0;
+    transform: translateX(100%);
+    transition: 0.3s;
+    background-color: #fff;
+    margin: 0%;
+  }
+
+  .mostrar-filtros-responsive {
+    transform: translateX(0%);
+  }
+  .container-header-logo {
+    margin: 0%;
+    padding: 0%;
+    padding-left: 5%;
+  }
+  .ver {
+    display: none;
+  }
+  .encabezado-filtros {
+    flex-direction: column;
+  }
+  #cerrar-filtros-responsive,
+  .cerrar-filtros-responsive,
+  .filtros-responsive {
+    display: inline-block;
+  }
+
+  .cerrar-filtros-responsive {
+    background-color: transparent;
+    text-align: right;
+  }
+  #limpiar {
+    margin-top: 25px;
+  }
+  .filtros-responsive {
+    display: inline-block;
+    background-color: transparent;
+  }
+  .contenedor-cantidad-de-productos {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-tarjetas {
+    margin: 2% 0% 2%;
+    min-width: auto;
+    flex-wrap: nowrap;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .tarjeta {
+    width: 100%;
+  }
+  #carrito {
+    width: 100%;
+  }
+  .carrito-contenido {
+    max-height: 50%;
+  }
+  .contenedor-botones-carrito {
+    max-height: 30%;
+  }
+  .checkout {
+    width: 100%;
+    right: 0%;
+    min-width: 0;
+    max-width: 570px;
+    top: 0%;
+    background-color: white;
+
+    z-index: 3;
+    padding: 20px;
+  }
+  .resumen-checkout {
+    min-width: 250px;
+  }
+  .footer-checkout {
+    margin: 10px 0 60px;
+  }
+  .vaciar-carrito-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    right: 0%;
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .main {
+    padding: 0 20px;
+  }
+  .carrito-aside {
+    width: 70%;
+  }
+  .tarjeta {
+    width: calc(100% / 2 - 2 * 10px);
+  }
+  .carrito-contenido {
+    max-height: 50%;
+  }
+  .checkout {
+    width: 70%;
+    right: 0%;
+    min-width: 0;
+
+    top: 0%;
+    background-color: white;
+
+    z-index: 3;
+    padding: 20px;
+  }
+  .resumen-checkout {
+    min-width: 250px;
+  }
+  .footer-checkout {
+    margin: 10px 0 60px;
+  }
+  .vaciar-carrito-section {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    right: 0%;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .main {
+    padding: 0 50px;
+  }
+  .carrito-aside {
+    width: 50%;
+  }
+  .tarjeta {
+    width: calc(100% / 2 - 2 * 10px);
+  }
+  .carrito-contenido {
+    max-height: 50%;
+  }
+  .checkout {
+    width: 60%;
+    right: 0%;
+    min-width: 0;
+
+    top: 0%;
+    background-color: white;
+
+    z-index: 3;
+    padding: 20px;
+  }
+  .resumen-checkout {
+    min-width: 250px;
+  }
+  .footer-checkout {
+    margin: 10px 0 60px;
+  }
+  .vaciar-carrito-section {
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    right: 0%;
+  }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1560px) {
+  .tarjeta {
+    width: calc(100% / 2 - 2 * 10px);
+  }
 }
