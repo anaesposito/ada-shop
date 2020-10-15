@@ -403,7 +403,7 @@ p {
   display: flex;
   flex-direction: column;
   margin: 6% 1% 1% 0%;
-  width: 60%;
+  max-width: 60%;
 }
 .encabezado-filtros {
   display: flex;
@@ -525,15 +525,18 @@ p {
 .seccion-tarjetas {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 .contenedor-tarjetas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .tarjeta {
-  width: 380px;
+  width: 31.3%;
+  min-width: 390px;
   margin: 1%;
   background-color: white;
   padding: 25px;
@@ -549,7 +552,7 @@ p {
 }
 
 .producto {
-  max-width: 100%;
+  max-width: 90%;
   height: 100%;
   padding: 0 20px 0;
   transition: 1s;
@@ -577,7 +580,7 @@ p {
 }
 .titulo-producto,
 .precio-producto,
-.rating-producto {
+.puntaje-producto {
   padding-bottom: 20px;
 }
 

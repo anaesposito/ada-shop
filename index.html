@@ -412,7 +412,7 @@
             aria-hidden="true" class="fas fa-times-circle"></i></button>
         <h2>Filtros</h2>
         <div class="limpiar">
-          <button aria-label="Limpiar Filtros de Búsqueda" id="limpiar"><i aria-hidden="true"
+          <button aria-label="Limpiar Filtros de Búsqueda" id="limpiar-caja-busqueda"><i aria-hidden="true"
               class="fas fa-trash-alt"></i>Limpiar
           </button>
         </div>
@@ -505,7 +505,7 @@
       <header class="header-tarjetas">
         <div class="contenedor-cantidad-de-productos">
           <p class="mostrando-cantidad-de-productos">
-            Mostrando<span class="nro-mostrado"> 0 </span>producto(s) de <span class="total-nros"> 0 </span>
+            Mostrando<span class="nro-mostrado"> 0 </span>producto(s) de <span class="total-nros-productos"> 0 </span>
           </p>
           <button class="filtros-responsive" arial-label="mostrar filtros" class="ocultar"><i aria-hidden="true"
               class="fas fa-filter"></i>
@@ -522,7 +522,7 @@
       <!-------------------------------------------Inicio Sección Tarjetas------------------------------------------->
       <div class="contenedor-tarjetas">
         <article aria-label="Consola Nintendo Switch" id="tarjeta-producto" class="tarjeta"
-          data-nombre="consola-nintendo-switch" data-rating="1" data-precio="37699" data-categoria="consolas">
+          data-nombre="consola-nintendo-switch" data-puntaje="1" data-precio="37699" data-categoria="consolas">
           <div class="div-foto">
             <img class="producto" src="img/objeto6.jpg" alt="" />
           </div>
@@ -534,7 +534,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
@@ -544,8 +544,8 @@
             <button data-nombre="consola-nintendo-switch" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="auriculares-sony" data-rating="1" data-precio="2355"
-          data-categoria="accesorios">
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="auriculares-sony" data-puntaje="1"
+          data-precio="2355" data-categoria="accesorios">
           <div class="div-foto">
             <img class="producto" src="img/objeto5.png" alt="" />
           </div>
@@ -557,7 +557,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
@@ -567,7 +567,7 @@
             <button data-nombre="auriculares-sony" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="celular-redmi" data-rating="4" data-precio="2245"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="celular-redmi" data-puntaje="4" data-precio="2245"
           data-categoria="celulares">
           <div class="div-foto">
             <img class="producto" src="img/objeto1.jpg" alt="" />
@@ -580,7 +580,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -590,7 +590,7 @@
             <button data-nombre="celular" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="play-station-4" data-rating="5" data-precio="59999"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="play-station-4" data-puntaje="5" data-precio="59999"
           data-categoria="consolas">
           <div class="div-foto">
             <img class="producto" src="img/objeto2.jpg" alt="" />
@@ -603,7 +603,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -613,7 +613,7 @@
             <button data-nombre="play-station-4" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="camara-nikon" data-rating="5" data-precio="82999"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="camara-nikon" data-puntaje="5" data-precio="82999"
           data-categoria="camaras">
           <div class="div-foto">
             <img class="producto" src="img/objeto3.jpg" alt="" />
@@ -626,7 +626,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -636,7 +636,7 @@
             <button data-nombre="camara-nikon" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="notebook-asus" data-rating="3" data-precio="125999"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="notebook-asus" data-puntaje="3" data-precio="125999"
           data-categoria="notebook">
           <div class="div-foto">
             <img class="producto" src="img/objeto4.png" alt="" />
@@ -649,7 +649,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -659,7 +659,7 @@
             <button data-nombre="notebook-asus" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="notebook-msi" data-rating="5" data-precio="215099"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="notebook-msi" data-puntaje="5" data-precio="215099"
           data-categoria="notebook">
           <div class="div-foto">
             <img class="producto" src="img/objeto-7.png" alt="notebook msi" />
@@ -672,7 +672,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -682,7 +682,7 @@
             <button data-nombre="notebook-msi" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="auriculares-philips" data-rating="5"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="auriculares-philips" data-puntaje="5"
           data-precio="2159" data-categoria="accesorios">
           <div class="div-foto">
             <img class="producto" src="img/objeto8.png" alt="auriculares philips" />
@@ -695,7 +695,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -705,7 +705,7 @@
             <button data-nombre="auriculares-philips" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="macbook" data-rating="5" data-precio="249000"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="macbook" data-puntaje="5" data-precio="249000"
           data-categoria="notebook">
           <div class="div-foto">
             <img class="producto" src="img/objeto9.png" alt="macbook" />
@@ -718,7 +718,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -728,7 +728,7 @@
             <button data-nombre="macbook" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="iphone" data-rating="5" data-precio="75000"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="iphone" data-puntaje="5" data-precio="75000"
           data-categoria="celulares">
           <div class="div-foto">
             <img class="producto" src="img/objeto10.jpeg" alt="iphone" />
@@ -741,7 +741,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -751,7 +751,7 @@
             <button data-nombre="iphone" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="xbox-one" data-rating="4" data-precio="95000"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="xbox-one" data-puntaje="4" data-precio="95000"
           data-categoria="consolas">
           <div class="div-foto">
             <img class="producto" src="img/objeto11.jpg" alt="xbox one" />
@@ -764,7 +764,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -774,7 +774,7 @@
             <button data-nombre="xbox-one" class="comprar">Comprar</button>
           </div>
         </article>
-        <article id="tarjeta-producto" class="tarjeta" data-nombre="mouse-gamer" data-rating="4" data-precio="900"
+        <article id="tarjeta-producto" class="tarjeta" data-nombre="mouse-gamer" data-puntaje="4" data-precio="900"
           data-categoria="accesorios">
           <div class="div-foto">
             <img class="producto" src="img/objeto12.jpg" alt="mouse gamer" />
@@ -787,7 +787,7 @@
               elit.
               Quia et iste natus? Aliquam provident aspernatur eius commodi
               et quis sapiente tenetur illo laborum ex maiores, illum officiis vero vitae quasi! </p>
-            <span class="rating-producto">
+            <span class="puntaje-producto">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>

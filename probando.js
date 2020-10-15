@@ -3,7 +3,6 @@ const productos = document.querySelectorAll(".tarjeta");
 // -------------------------------------------------Inicio Filtros ---------------------------------------//
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
 const limpiarBusqueda = document.querySelector("#limpiar-caja-busqueda");
-const cajaBusqueda = document.querySelector(".busqueda");
 
 //------------Limpiar Busqueda--------------//
 limpiarBusqueda.onclick = () => {
@@ -52,6 +51,24 @@ const checkboxesCategoria = document.querySelectorAll(
   ".check-filtro-categoria"
 );
 
+const hayCheckboxCheckedCategoria = () => {
+  for (let checkboxCategoria of checkboxesCategoria) {
+    if (checkboxCategoria.checked) {
+      return true;
+    }
+  }
+};
+
+const categoriaCoincideProducto = (producto) => {
+  const categoria = producto.value;
+  for (let checkboxCategoria of checkboxesCategoria) {
+    if (checkboxCategoria.value === categoria && checkboxCategoria.checked) {
+      return true;
+    }
+  }
+  return false;
+};
+
 const pasaFiltroCategoria = (producto) => {
   if (hayCheckboxCheckedCategoria()) {
     if (categoriaCoincideProducto(producto)) {
@@ -62,25 +79,6 @@ const pasaFiltroCategoria = (producto) => {
   }
   return true;
 };
-
-const hayCheckboxCheckedCategoria = () => {
-  for (let checkboxCategoria of checkboxesCategoria) {
-    if (checkboxCategoria.checked) {
-      return true;
-    }
-  }
-};
-
-const categoriaCoincideProducto = (producto) => {
-  const categoria = producto.dataset.categoria;
-  for (let checkboxCategoria of checkboxesCategoria) {
-    if (checkboxCategoria.value === categoria && checkboxCategoria.checked) {
-      return true;
-    }
-  }
-  return false;
-};
-
 //------------Pasa Filtro Puntaje--------------//
 const checkboxesPuntaje = document.querySelectorAll(".check-filtro-puntaje");
 
@@ -93,7 +91,7 @@ const hayCheckboxCheckedPuntaje = () => {
 };
 
 const puntajeCoincideProducto = (producto) => {
-  const puntaje = producto.dataset.puntaje;
+  const puntaje = producto.value;
   for (let checkboxPuntaje of checkboxesPuntaje) {
     if (checkboxPuntaje.value === puntaje && checkboxPuntaje.checked) {
       return true;
@@ -115,12 +113,22 @@ const pasaFiltroPuntaje = (producto) => {
 
 //-----------------Pasa Filtros-----------------//
 
+const filtroProducto = () => {
+  for (let producto of productos) {
+    if (pasaFiltros(producto)) {
+      mostrarProducto(producto);
+    } else {
+      ocultarProducto(producto);
+    }
+  }
+};
+
 const ocultarProducto = (producto) => {
-  return producto.classList.add("ocultar");
+  return producto.classlist.add("ocultar");
 };
 
 const mostrarProducto = (producto) => {
-  return producto.classList.remove("ocultar");
+  return producto.classlist.remove("ocultar");
 };
 
 const pasaFiltros = (producto) => {
@@ -134,41 +142,32 @@ const pasaFiltros = (producto) => {
     return false;
   }
 };
-const filtroProducto = () => {
-  for (let producto of productos) {
-    if (pasaFiltros(producto)) {
-      mostrarProducto(producto);
-    } else {
-      ocultarProducto(producto);
-    }
-  }
-};
 // -------------------------------------------------------- Fin de Filtros --------------------------------------------//
 // ------------------------------------------------- Contador tarjetas visibles ---------------------------------------//
 
-const totalProductos = document.querySelector(".total-nros-productos");
-const nroMostrado = document.querySelector(".nro-mostrado");
-
 cajaBusqueda.oninput = () => {
-  filtroProducto();
-  cantidadProductosVisibles();
+  filtroTarjetas();
+  cantidadProductosMostrados();
 };
 
-for (let checkbox of checkboxes) {
+for (let checkbox of checkboxesCategoria) {
   checkbox.onclick = () => {
-    filtroProducto();
-
+    filtroTarjetas();
     cantidadProductosVisibles();
   };
 }
-let productosVisibles;
-let productosTotales;
-let productosOcultos;
 
-const cantidadProductosVisibles = () => {
-  const productosOcultos = document.getElementsByClassName("tarjeta ocultar");
-  productosTotales = productos.length;
-  totalProductos.textcontent = productosTotales;
-  productosVisibles = productosTotales - productosOcultos.length;
-  nroMostrado.textcontent = productosVisibles;
+for (let checkbox of checkboxesPuntaje) {
+  checkbox.onclick = () => {
+    filtroTarjetas();
+    cantidadProductosVisibles();
+  };
+}
+const productosOcultos = document.querySelectorAll(".tarjetas .ocultar");
+const totalProductos = document.querySelectorAll(".total-nros-productos");
+
+const cantidadProductosVisibles = (productosVisibles) => {
+  productosVisibles = productos.length - productosOcultos.length;
+  productosVisibles.textcontent = productosVisibles;
+  totalProductos.textcontent = productos.length;
 };
