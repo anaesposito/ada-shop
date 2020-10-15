@@ -240,7 +240,7 @@ p {
   padding: 40px 30px;
   max-width: 500px;
   position: fixed;
-  top: 50%;
+  top: 10%;
   right: 50%;
   z-index: 5;
 }
@@ -758,8 +758,9 @@ p {
     background-color: transparent;
     text-align: right;
   }
-  #limpiar {
+  #limpiar-caja-busqueda {
     margin-top: 25px;
+    background-color: transparent;
   }
   .filtros-responsive {
     display: inline-block;
