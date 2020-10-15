@@ -4,7 +4,7 @@
 //..................Inicio Agregar al Carrito Funciones.............//
 
 const botonesComprarProducto = document.querySelectorAll(".comprar");
-const contenidoCarrito = document.querySelector(".contenido-carrito");
+const contenidoCarrito = document.querySelector(".alertas-contenido-carrito");
 const tarjetasCarrito = document.querySelectorAll(".tarjeta-carrito");
 console.log(tarjetasCarrito);
 const agregarProductos = () => {
@@ -71,9 +71,11 @@ const vaciarCarritoSection = document.querySelector(".vaciar-carrito-section");
 
 vaciarCarrito.onclick = () => {
   vaciarCarritoSection.classList.remove("hidden");
+  overlay.classList.add("overlay-aumentado");
 };
 cancelarVaciarCarrito.onclick = () => {
   vaciarCarritoSection.classList.add("hidden");
+  overlay.classList.remove("overlay-aumentado");
 };
 // termina aca vaciar carrito aside SIN BORRAR PRODUCTOS
 //.....................Fin Vaciar Carrito Aside.............//

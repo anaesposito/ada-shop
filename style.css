@@ -187,6 +187,9 @@ p {
 .cuerpo-carrito > p {
   margin-bottom: 10%;
 }
+.subtotal-carrito-aside {
+  margin-left: 10%;
+}
 .productos-agregados-carrito {
   overflow: scroll;
   max-height: 500px;
@@ -240,7 +243,7 @@ p {
   padding: 40px 30px;
   max-width: 500px;
   position: fixed;
-  top: 10%;
+  top: 30%;
   right: 50%;
   z-index: 5;
 }
