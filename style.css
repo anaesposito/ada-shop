@@ -499,6 +499,7 @@ p {
 
 .mostrando-cantidad-de-productos {
   margin: 15px;
+  text-align: center;
 }
 .ver {
   margin: 15px;
@@ -529,6 +530,7 @@ p {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  max-width: 90%;
 }
 .contenedor-tarjetas {
   display: flex;
@@ -557,7 +559,6 @@ p {
 .producto {
   max-width: 90%;
   height: 100%;
-  padding: 0 20px 0;
   transition: 1s;
 }
 .div-foto {
@@ -702,6 +703,21 @@ p {
 
 /*..................................... Fin footer Main .............................*/
 /*..................................... Inicia Responsive .............................*/
+@media (max-width: 400px) {
+  .main {
+    margin: 10px;
+  }
+  .tarjeta {
+    max-width: 310px;
+    min-width: auto;
+  }
+  .comprar {
+    width: 200px;
+  }
+  .producto {
+    height: auto;
+  }
+}
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -769,12 +785,9 @@ p {
     display: inline-block;
     background-color: transparent;
   }
-  .contenedor-cantidad-de-productos {
-    display: flex;
-    justify-content: space-between;
-  }
+
   .header-tarjetas {
-    margin: 2% 0% 2%;
+    margin: 2% 1% 2%;
     min-width: auto;
 
     flex-wrap: nowrap;
@@ -886,12 +899,9 @@ p {
     display: inline-block;
     background-color: transparent;
   }
-  .contenedor-cantidad-de-productos {
-    display: flex;
-    justify-content: space-between;
-  }
+
   .header-tarjetas {
-    margin: 2% 0% 2%;
+    margin: 2% 1% 2%;
     min-width: auto;
     flex-wrap: nowrap;
     height: 60px;
@@ -943,11 +953,15 @@ p {
   .main {
     padding: 0 20px;
   }
+  .comprar {
+    width: 200px;
+  }
   .carrito-aside {
     width: 70%;
   }
   .tarjeta {
     width: calc(100% / 2 - 2 * 10px);
+    min-width: auto;
   }
   .carrito-contenido {
     max-height: 50%;
@@ -977,6 +991,10 @@ p {
     justify-content: center;
     top: 0%;
     right: 0%;
+  }
+
+  .producto {
+    height: auto;
   }
 }
 
@@ -1019,6 +1037,9 @@ p {
     justify-content: center;
     top: 0%;
     right: 0%;
+  }
+  .tarjeta {
+    min-width: auto;
   }
 }
 

@@ -6,7 +6,7 @@
 const botonesComprarProducto = document.querySelectorAll(".comprar");
 const contenidoCarrito = document.querySelector(".alertas-contenido-carrito");
 const tarjetasCarrito = document.querySelectorAll(".tarjeta-carrito");
-console.log(tarjetasCarrito);
+
 const agregarProductos = () => {
   for (let botonComprarProducto of botonesComprarProducto) {
     botonComprarProducto.onclick = () => {
