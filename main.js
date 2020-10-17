@@ -32,6 +32,9 @@ const cantidadEnCarrito = document.querySelector(
 );
 const itemsEnCarrito = document.querySelector(".carrito-items");
 
+let nroItemsCarrito = Number(itemsEnCarrito.textContent);
+console.log(nroItemsCarrito);
+
 const clickCarrito = document.querySelector("#click-carrito");
 const botonCerrarCarrito = document.querySelector("#cerrar-carrito");
 const asideCarrito = document.querySelector("#carrito");
@@ -50,7 +53,9 @@ const mostrarCarritoAside = () => {
 //     }
 //   }
 // };
-
+function sumarchangos() {
+  nroItemsCarrito++;
+}
 for (let botonComprarProducto of botonesComprarProducto) {
   botonComprarProducto.onclick = () => {
     for (let tarjetaCarrito of tarjetasCarrito) {
