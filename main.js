@@ -21,7 +21,9 @@ for (let botonComprarProducto of botonesComprarProducto) {
         tarjetaCarrito.dataset.nombre === botonComprarProducto.dataset.nombre
       ) {
         tarjetaCarrito.classList.remove("ocultar");
+        tarjetaCarrito.classList.add("sumar-importe");
         contandoProductosCarrito();
+        identificarPrecios()
       }
     }
   };
@@ -36,6 +38,18 @@ const contandoProductosCarrito = () => {
     tarjetasCarrito.length - listaProductosEnCarritoOcultos.length;
   cantidadEnCarrito.textContent = productosVisiblesCarrito;
   itemsEnCarrito.textContent = productosVisiblesCarrito;
+};
+
+const listaProductosParaSumarImporte = document.getElementsByClassName(
+  "tarjeta-carrito sumar-importe"
+);
+const subtotalTexto = document.querySelector("#subtotal-carrito-aside")
+
+const identificarPrecios = () => {
+  for (let importeASumar of listaProductosParaSumarImporte){
+    let precio = importeASumar.dataset.precio
+    Number(precio) = precio
+    
 };
 
 //...............Inicio Mostrar/Ocultar Carrito Aside...............//
@@ -93,7 +107,8 @@ for (let eliminarProducto of eliminarProductosEnCarrito) {
 }
 
 //......................Fin Eliminar Producto de Carrito ...........//
-//.................Inicio Carrito Checkout Display..........//
+
+//.....................Inicio Carrito Checkout Display..............//
 const botonComprarCarrito = document.querySelector(".boton-comprar-carrito");
 const carritoCheckout = document.querySelector(".checkout");
 const botonSeguirComprandoCheckout = document.querySelector(
@@ -121,7 +136,7 @@ botonSeguirComprandoCheckout.onclick = () => {
   overlay.classList.remove("overlay-aumentado");
 };
 
-//..................Inicio Funciones Checkout.............//
+//.......................Inicio Funciones Checkout..................//
 
 const efectivo = document.querySelectorAll("input[value='efectivo-debito']");
 const credito = document.querySelector("input[value='tarjeta-credito']");
