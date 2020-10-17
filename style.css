@@ -498,12 +498,11 @@ p {
 }
 /*................................................Seccion Productos...........................*/
 .header-tarjetas {
-  background: #fff;
+  background-color: #fff;
   display: flex;
   margin: 23px 10px 23px;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
   padding: 25px 30px;
   font-size: 14px;
   margin-top: 6%;
@@ -716,6 +715,13 @@ p {
 }
 
 /*..................................... Fin footer Main .............................*/
+/*.................................Modo Diurno - Modo Nocturno................................*/
+.nocturno {
+  background-color: black;
+  font-weight: bold;
+  color: white;
+}
+
 /*..................................... Inicia Responsive .............................*/
 @media (max-width: 400px) {
   .main {

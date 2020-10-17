@@ -1,16 +1,3 @@
-// ------------------------------------------------------Inicio Modo Nocturno/Modo Diurno ----------------------------------------//
-const modoDiurno = document.querySelector("#modo-diurno");
-const modoNocturno = document.querySelector("#modo-nocturno");
-
-modoDiurno.onclick = () => {
-  modoNocturno.classList.remove("ocultar");
-  modoDiurno.classList.add("ocultar");
-};
-
-modoNocturno.onclick = () => {
-  modoDiurno.classList.remove("ocultar");
-  modoNocturno.classList.add("ocultar");
-};
 // ------------------------------------------------------Inicio Carrito Aside ----------------------------------------//
 
 const botonesComprarProducto = document.querySelectorAll(".comprar");
@@ -475,3 +462,32 @@ botonVistaGrilla.onclick = () => {
 };
 
 //...................Fin Ver Como............................//
+
+// ------------------------------------------------------Inicio Modo Nocturno/Modo Diurno ----------------------------------------//
+const modoDiurno = document.querySelector("#modo-diurno");
+const modoNocturno = document.querySelector("#modo-nocturno");
+const headerTarjetas = document.querySelector(".header-tarjetas");
+const botonesGenerales = document.querySelectorAll("button");
+const mainFooter = document.querySelector(".logo-firma-footer");
+
+modoDiurno.onclick = () => {
+  for (let botonGeneral of botonesGenerales) {
+    botonGeneral.classList.add("nocturno");
+    mainFooter.classList.add("nocturno");
+    modoNocturno.classList.remove("ocultar");
+    modoDiurno.classList.add("ocultar");
+    body.classList.add("nocturno");
+    headerTarjetas.classList.add("nocturno");
+  }
+};
+
+modoNocturno.onclick = () => {
+  for (let botonGeneral of botonesGenerales) {
+    botonGeneral.classList.remove("nocturno");
+    mainFooter.classList.remove("nocturno");
+    body.classList.remove("nocturno");
+    headerTarjetas.classList.remove("nocturno");
+    modoDiurno.classList.remove("ocultar");
+    modoNocturno.classList.add("ocultar");
+  }
+};
