@@ -23,16 +23,15 @@ for (let botonComprarProducto of botonesComprarProducto) {
         tarjetaCarrito.classList.remove("ocultar");
         tarjetaCarrito.classList.add("sumar-importe");
         contandoProductosCarrito();
-        // identificarPrecios();
       }
     }
   };
 }
 
+//.................Inicio Contar Productos en Carrito...............//
 const listaProductosEnCarritoOcultos = document.getElementsByClassName(
   "tarjeta-carrito ocultar"
 );
-//.................Inicio Contar Productos en Carrito...............//
 const contandoProductosCarrito = () => {
   productosVisiblesCarrito =
     tarjetasCarrito.length - listaProductosEnCarritoOcultos.length;
@@ -43,11 +42,11 @@ const contandoProductosCarrito = () => {
 const listaProductosParaSumarImporte = document.getElementsByClassName(
   "tarjeta-carrito sumar-importe"
 );
-const subtotalCarrito = document.querySelector("#subtotal-carrito-aside");
+
 const inputsProductosCarrito = document.querySelectorAll(
   ".input-cantidad-en-carrito"
 );
-// const multiplicadorUnidadesCarrito = () => {
+const subtotalCarrito = document.querySelector("#subtotal-carrito-aside");
 
 const multiplicadorUnidadesCarrito = () => {
   for (let inputProductosCarritos of inputsProductosCarrito) {
@@ -157,7 +156,6 @@ const efectivo = document.querySelectorAll("input[value='efectivo-debito']");
 const credito = document.querySelector("input[value='tarjeta-credito']");
 const envioOpcion = document.querySelector("input[name='envio']");
 const tarjetaDescuento = document.querySelector("input[name='descuento']");
-
 const recargo = document.querySelector(".recargo-checkout-importe");
 const renglonEnvio = document.querySelector(".envio-checkout");
 const renglonRecargo = document.querySelector(".recargo-checkout");
@@ -167,9 +165,7 @@ const envio = document.querySelector(".envio-checkout-importe");
 const total = document.querySelector(".total-checkout-importe");
 const opcionesDePago = document.querySelectorAll(".metodos-de-pago");
 
-// el problema esta en la declaracion de subtotal que no reflej en el textcontent del carrito
-
-// let subtotalNumero = Number(subtotal);
+let subtotalNumero = Number(subtotalCarrito);
 
 for (let opcion of opcionesDePago) {
   opcion.oninput = () => {

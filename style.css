@@ -293,7 +293,7 @@ p {
   background-color: white;
   max-height: 100%;
   min-width: 800px;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 20px;
   position: fixed;
   right: 25%;
@@ -650,6 +650,7 @@ p {
 .ajustes-imagen {
   max-width: 100%;
   transition: 1s;
+  max-height: 390px;
 }
 /*..................................... Aca comienza footer Main .............................*/
 .main-footer {
