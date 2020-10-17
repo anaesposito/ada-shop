@@ -7,25 +7,25 @@ const botonesComprarProducto = document.querySelectorAll(".comprar");
 const contenidoCarrito = document.querySelector(".alertas-contenido-carrito");
 const tarjetasCarrito = document.querySelectorAll(".tarjeta-carrito");
 
-const agregarProductos = () => {
-  for (let botonComprarProducto of botonesComprarProducto) {
-    botonComprarProducto.onclick = () => {
-      botonComprarProducto.classList.add("producto-agregado");
-    };
-  }
-};
+// const agregarProductos = () => {
+//   for (let botonComprarProducto of botonesComprarProducto) {
+//     botonComprarProducto.onclick = () => {
+//       botonComprarProducto.classList.add("producto-agregado");
+//     };
+//   }
+// };
 
-const coincideBotonConTarjeta = () => {
-  for (let botonComprarProducto of botonesComprarProducto) {
-    for (let tarjetaCarrito of tarjetasCarrito) {
-      if (
-        botonComprarProducto.dataset.nombre == tarjetaCarrito.dataset.nombre
-      ) {
-        tarjetaCarrito.classList.remove("ocultar");
-      }
-    }
-  }
-};
+// const coincideBotonConTarjeta = () => {
+//   for (let botonComprarProducto of botonesComprarProducto) {
+//     for (let tarjetaCarrito of tarjetasCarrito) {
+//       if (
+//         botonComprarProducto.dataset.nombre == tarjetaCarrito.dataset.nombre
+//       ) {
+//         tarjetaCarrito.classList.remove("ocultar");
+//       }
+//     }
+//   }
+// };
 
 const clickCarrito = document.querySelector("#click-carrito");
 const botonCerrarCarrito = document.querySelector("#cerrar-carrito");
@@ -41,17 +41,15 @@ const mostrarCarritoAside = () => {
 
 clickCarrito.onclick = () => {
   mostrarCarritoAside();
-  agregarProductos();
-  const productosAgregados = document.querySelectorAll(".producto-agregado");
-  coincideBotonConTarjeta();
-
-  if (productosAgregados.length === 0) {
-    contenidoCarrito.textContent =
-      "No tienes productos en el carrito, ¡agrega algunos!";
-  } else {
-    coincideBotonConTarjeta();
-  }
 };
+
+//   if (productosAgregados.length === 0) {
+//     contenidoCarrito.textContent =
+//       "No tienes productos en el carrito, ¡agrega algunos!";
+//   } else {
+//     coincideBotonConTarjeta();
+//   }
+// };
 
 botonCerrarCarrito.onclick = () => {
   asideCarrito.classList.add("hidden");
@@ -347,32 +345,33 @@ const filtroProducto = () => {
     }
   }
 };
-// -------------------------------------------------------- Fin de Filtros --------------------------------------------//
-// ------------------------------------------------- Contador tarjetas visibles ---------------------------------------//
+// ---------------------------------------------- Fin de Filtros -----------------------------------------//
+// ---------------------------------- Inicio Contador productos visibles seccion principal-----------------------------------//
 
 const totalProductos = document.querySelector(".total-nros-productos");
 const nroMostrado = document.querySelector(".nro-mostrado");
 
 cajaBusqueda.oninput = () => {
   filtroProducto();
-  cantidadProductosVisibles();
+  cantidadProductosVisiblesMain();
 };
 
 for (let checkbox of checkboxes) {
   checkbox.onclick = () => {
     filtroProducto();
-
-    cantidadProductosVisibles();
+    cantidadProductosVisiblesMain();
   };
 }
 
 const productosOcultos = document.getElementsByClassName("tarjeta ocultar");
 
-const cantidadProductosVisibles = () => {
-  productosVisibles = productos.length - productosOcultos.length;
-  nroMostrado.textContent = productosVisibles;
+const cantidadProductosVisiblesMain = () => {
+  productosVisiblesMain = productos.length - productosOcultos.length;
+  nroMostrado.textContent = productosVisiblesMain;
   totalProductos.textContent = productos.length;
 };
+
+// ------------------------------------------------- Fin Contador productos visibles seccion principal ---------------------------------------//
 //..............Inicia Ver Como............................//
 
 const descripcionProducto = document.querySelectorAll(
@@ -418,3 +417,43 @@ botonVistaGrilla.onclick = () => {
     imagen.classList.remove("ajustes-imagen");
   }
 };
+//...................Fin Ver Como............................//
+
+// ------------------------------------ Inicio Contador de Productos en Carrito-----------------------------//
+
+// const productosOcultos = document.getElementsByClassName("tarjeta ocultar");
+
+// const cantidadProductosVisiblesMain = () => {
+//   productosVisibles = productos.length - productosOcultos.length;
+//   nroMostrado.textContent = productosVisibles;
+//   totalProductos.textContent = productos.length;
+// };
+
+// ----------------------------------------Fin Contador de Productos en Carrito-----------------------------//
+
+// ---------------------------------------- Inicio Agregar Productos en Carrito-----------------------------//
+
+for (let botonComprarProducto of botonesComprarProducto) {
+  botonComprarProducto.onclick = () => {
+    for (let tarjetaCarrito of tarjetasCarrito) {
+      if (
+        tarjetaCarrito.dataset.nombre === botonComprarProducto.dataset.nombre
+      ) {
+        tarjetaCarrito.classList.remove("ocultar");
+      }
+    }
+  };
+}
+
+// const tarjetasCarritoAgregadas = document.getElementsByClassName(
+//   "producto-agregado tarjeta-carrito"
+// );
+// const cantidadEnCarrito = document.querySelector(
+//   "cantidad-productos-agregados"
+// );
+
+// const cantidadProductosVisiblesCarrito = () => {
+//   productosVisiblesCarrito = tarjetasCarritoAgregadas.length;
+//   cantidadEnCarrito.textContent = productosVisiblesCarrito;
+// };
+// ----------------------------------------Fin Agregar de Productos en Carrito------------------------------//
