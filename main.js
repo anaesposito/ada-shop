@@ -1,61 +1,19 @@
 // ------------------------------------------------------Inicio Carrito Aside ----------------------------------------//
 
-//...............Inicio Ocultar Carrito Aside...............//
-//..................Inicio Agregar al Carrito Funciones.............//
-
 const botonesComprarProducto = document.querySelectorAll(".comprar");
 const contenidoCarrito = document.querySelector(".alertas-contenido-carrito");
 const tarjetasCarrito = document.querySelectorAll(".tarjeta-carrito");
-
-// const agregarProductos = () => {
-//   for (let botonComprarProducto of botonesComprarProducto) {
-//     botonComprarProducto.onclick = () => {
-//       botonComprarProducto.classList.add("producto-agregado");
-//     };
-//   }
-// };
-
-// const coincideBotonConTarjeta = () => {
-//   for (let botonComprarProducto of botonesComprarProducto) {
-//     for (let tarjetaCarrito of tarjetasCarrito) {
-//       if (
-//         botonComprarProducto.dataset.nombre == tarjetaCarrito.dataset.nombre
-//       ) {
-//         tarjetaCarrito.classList.remove("ocultar");
-//       }
-//     }
-//   }
-// };
-
 const cantidadEnCarrito = document.querySelector(
   ".cantidad-productos-agregados"
 );
 const itemsEnCarrito = document.querySelector(".carrito-items");
-
-let nroItemsCarrito = Number(itemsEnCarrito.textContent);
-console.log(nroItemsCarrito);
-
 const clickCarrito = document.querySelector("#click-carrito");
 const botonCerrarCarrito = document.querySelector("#cerrar-carrito");
 const asideCarrito = document.querySelector("#carrito");
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 
-const mostrarCarritoAside = () => {
-  asideCarrito.classList.remove("hidden");
-  overlay.classList.remove("ocultar");
-  body.classList.add("overflow");
-};
-// const sumarProductosAgregados = () => {
-//   for (let botonComprarProducto of botonesComprarProducto) {
-//     if (botonComprarProducto.className.includes("producto-agregado")) {
-//       nroItemsCarrito++;
-//     }
-//   }
-// };
-function sumarchangos() {
-  nroItemsCarrito++;
-}
+//...................Inicio Mostrar Producto Agregado...............//
 for (let botonComprarProducto of botonesComprarProducto) {
   botonComprarProducto.onclick = () => {
     for (let tarjetaCarrito of tarjetasCarrito) {
@@ -69,16 +27,10 @@ for (let botonComprarProducto of botonesComprarProducto) {
   };
 }
 
-//   botonComprarProducto.onclick = () => {
-//     probandoClick();
-//     sumarProductosAgregados();
-//   };
-// }
-
 const listaProductosEnCarritoOcultos = document.getElementsByClassName(
   "tarjeta-carrito ocultar"
 );
-
+//.................Inicio Contar Productos en Carrito...............//
 const contandoProductosCarrito = () => {
   productosVisiblesCarrito =
     tarjetasCarrito.length - listaProductosEnCarritoOcultos.length;
@@ -86,25 +38,17 @@ const contandoProductosCarrito = () => {
   itemsEnCarrito.textContent = productosVisiblesCarrito;
 };
 
+//...............Inicio Mostrar/Ocultar Carrito Aside...............//
+const mostrarCarritoAside = () => {
+  asideCarrito.classList.remove("hidden");
+  overlay.classList.remove("ocultar");
+  body.classList.add("overflow");
+};
+
 clickCarrito.onclick = () => {
   mostrarCarritoAside();
   contandoProductosCarrito();
 };
-
-// const cantidadProductosVisiblesMain = () => {
-//   productosVisibles = productos.length - productosOcultos.length;
-//   nroMostrado.textContent = productosVisibles;
-//   totalProductos.textContent = productos.length;
-// };
-
-// -----------------------
-//   if (productosAgregados.length === 0) {
-//     contenidoCarrito.textContent =
-//       "No tienes productos en el carrito, ¡agrega algunos!";
-//   } else {
-//     coincideBotonConTarjeta();
-//   }
-// };
 
 botonCerrarCarrito.onclick = () => {
   asideCarrito.classList.add("hidden");
@@ -112,9 +56,9 @@ botonCerrarCarrito.onclick = () => {
   body.classList.remove("overflow");
 };
 
-//..................Fin Ocultar Carrito Aside...............//
+//.........................Fin Ocultar Carrito Aside................//
 
-//..................Inicio Vaciar Carrito Aside.............//
+//......................Inicio Vaciar Carrito Aside.................//
 
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 const cancelarVaciarCarrito = document.querySelector(
@@ -130,9 +74,25 @@ cancelarVaciarCarrito.onclick = () => {
   vaciarCarritoSection.classList.add("hidden");
   overlay.classList.remove("overlay-aumentado");
 };
-// termina aca vaciar carrito aside SIN BORRAR PRODUCTOS
-//.....................Fin Vaciar Carrito Aside.............//
 
+//.............................Fin Vaciar Carrito Aside.............//
+//......................Inicio Eliminar Producto de Carrito ........//
+const eliminarProductosEnCarrito = document.querySelectorAll(
+  ".eliminar-de-carrito"
+);
+
+for (let eliminarProducto of eliminarProductosEnCarrito) {
+  eliminarProducto.onclick = () => {
+    for (tarjetaCarrito of tarjetasCarrito) {
+      if (eliminarProducto.dataset.nombre === tarjetaCarrito.dataset.nombre) {
+        tarjetaCarrito.classList.add("ocultar");
+        contandoProductosCarrito();
+      }
+    }
+  };
+}
+
+//......................Fin Eliminar Producto de Carrito ...........//
 //.................Inicio Carrito Checkout Display..........//
 const botonComprarCarrito = document.querySelector(".boton-comprar-carrito");
 const carritoCheckout = document.querySelector(".checkout");
@@ -474,27 +434,3 @@ botonVistaGrilla.onclick = () => {
 };
 
 //...................Fin Ver Como............................//
-
-// ------------------------------------ Inicio Contador de Productos en Carrito-----------------------------//
-
-// const productosOcultos = document.getElementsByClassName("tarjeta ocultar");
-
-// const cantidadProductosVisiblesMain = () => {
-//   productosVisibles = productos.length - productosOcultos.length;
-//   nroMostrado.textContent = productosVisibles;
-//   totalProductos.textContent = productos.length;
-// };
-
-// ----------------------------------------Fin Contador de Productos en Carrito-----------------------------//
-
-// const tarjetasCarritoAgregadas = document.getElementsByClassName(
-//   "producto-agregado tarjeta-carrito"
-// );
-
-// const cantidadProductosVisiblesCarrito = () => {
-//   productosVisiblesCarrito = tarjetasCarritoAgregadas.length;
-//   cantidadEnCarrito.textContent = productosVisiblesCarrito;
-// };
-// ----------------------------------------Fin Agregar de Productos en Carrito------------------------------//
-
-// ---------------------------------------- Inicio Agregar Productos en Carrito-----------------------------//
