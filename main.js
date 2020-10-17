@@ -467,27 +467,62 @@ botonVistaGrilla.onclick = () => {
 const modoDiurno = document.querySelector("#modo-diurno");
 const modoNocturno = document.querySelector("#modo-nocturno");
 const headerTarjetas = document.querySelector(".header-tarjetas");
-const botonesGenerales = document.querySelectorAll("button");
 const mainFooter = document.querySelector(".logo-firma-footer");
+const botonesGenerales = document.querySelectorAll("button");
+const resumenCheckout = document.querySelector(".resumen-checkout");
+const botonVaciarCarritoConfirmacion = document.querySelector(
+  ".boton-vaciar-carrito-confirmacion"
+);
 
 modoDiurno.onclick = () => {
   for (let botonGeneral of botonesGenerales) {
-    botonGeneral.classList.add("nocturno");
-    mainFooter.classList.add("nocturno");
-    modoNocturno.classList.remove("ocultar");
-    modoDiurno.classList.add("ocultar");
-    body.classList.add("nocturno");
-    headerTarjetas.classList.add("nocturno");
+    for (let botonComprarProducto of botonesComprarProducto) {
+      for (let producto of productos) {
+        producto.classList.add("nocturno");
+        botonComprarProducto.classList.add("boton-modo-nocturno");
+        botonGeneral.classList.add("nocturno");
+        mainFooter.classList.add("nocturno");
+        modoNocturno.classList.remove("ocultar");
+        modoDiurno.classList.add("ocultar");
+        body.classList.add("nocturno");
+        headerTarjetas.classList.add("nocturno");
+        asideCarrito.classList.add("nocturno");
+        botonCerrarCarrito.classList.remove("nocturno");
+        botonCerrarCarrito.classList.add("nocturno-cerrar-carrito");
+        carritoCheckout.classList.add("nocturno");
+        resumenCheckout.classList.add("nocturno-resumen-checkout");
+        botonSeguirComprandoCheckout.classList.remove("nocturno");
+        botonSeguirComprandoCheckout.classList.add("boton-modo-nocturno");
+        vaciarCarritoSection.classList.add("nocturno");
+        cancelarVaciarCarrito.classList.remove("nocturno");
+        cancelarVaciarCarrito.classList.add("boton-modo-nocturno");
+        botonVaciarCarritoConfirmacion.classList.remove("nocturno");
+        botonVaciarCarritoConfirmacion.classList.add("boton-modo-nocturno");
+      }
+    }
   }
 };
-
 modoNocturno.onclick = () => {
   for (let botonGeneral of botonesGenerales) {
-    botonGeneral.classList.remove("nocturno");
-    mainFooter.classList.remove("nocturno");
-    body.classList.remove("nocturno");
-    headerTarjetas.classList.remove("nocturno");
-    modoDiurno.classList.remove("ocultar");
-    modoNocturno.classList.add("ocultar");
+    for (let botonComprarProducto of botonesComprarProducto) {
+      for (let producto of productos) {
+        producto.classList.remove("nocturno");
+        modoDiurno.classList.remove("ocultar");
+        modoNocturno.classList.add("ocultar");
+        botonComprarProducto.classList.remove("boton-modo-nocturno");
+        botonGeneral.classList.remove("nocturno");
+        mainFooter.classList.remove("nocturno");
+        body.classList.remove("nocturno");
+        headerTarjetas.classList.remove("nocturno");
+        asideCarrito.classList.remove("nocturno");
+        botonCerrarCarrito.classList.remove("nocturno-cerrar-carrito");
+        carritoCheckout.classList.remove("nocturno");
+        resumenCheckout.classList.remove("nocturno-resumen-checkout");
+        botonSeguirComprandoCheckout.classList.remove("boton-modo-nocturno");
+        vaciarCarritoSection.classList.remove("nocturno");
+        cancelarVaciarCarrito.classList.remove("boton-modo-nocturno");
+        botonVaciarCarritoConfirmacion.classList.remove("boton-modo-nocturno");
+      }
+    }
   }
 };
