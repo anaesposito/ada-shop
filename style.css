@@ -63,6 +63,11 @@ p {
   padding: 40px;
   margin: 60px;
 }
+#modo-diurno,
+#modo-nocturno {
+  background-color: transparent;
+}
+
 .carro,
 .fa-shopping-cart {
   padding: 15px;

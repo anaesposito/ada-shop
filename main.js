@@ -1,3 +1,16 @@
+// ------------------------------------------------------Inicio Modo Nocturno/Modo Diurno ----------------------------------------//
+const modoDiurno = document.querySelector("#modo-diurno");
+const modoNocturno = document.querySelector("#modo-nocturno");
+
+modoDiurno.onclick = () => {
+  modoNocturno.classList.remove("ocultar");
+  modoDiurno.classList.add("ocultar");
+};
+
+modoNocturno.onclick = () => {
+  modoDiurno.classList.remove("ocultar");
+  modoNocturno.classList.add("ocultar");
+};
 // ------------------------------------------------------Inicio Carrito Aside ----------------------------------------//
 
 const botonesComprarProducto = document.querySelectorAll(".comprar");
@@ -169,7 +182,7 @@ const opcionesDePago = document.querySelectorAll(".metodos-de-pago");
 
 // el problema esta en la declaracion de subtotal que no reflej en el textcontent del carrito
 
-let subtotalNumero = Number(subtotal);
+// let subtotalNumero = Number(subtotal);
 
 for (let opcion of opcionesDePago) {
   opcion.oninput = () => {
