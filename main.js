@@ -24,7 +24,6 @@ for (let botonComprarProducto of botonesComprarProducto) {
         tarjetaCarrito.classList.add("sumar-importe");
         contandoProductosCarrito();
         // identificarPrecios();
-        multiplicadorUnidadesCarrito();
       }
     }
   };
@@ -44,32 +43,28 @@ const contandoProductosCarrito = () => {
 const listaProductosParaSumarImporte = document.getElementsByClassName(
   "tarjeta-carrito sumar-importe"
 );
-const subtotalTexto = document.querySelector("#subtotal-carrito-aside");
+const subtotalCarrito = document.querySelector("#subtotal-carrito-aside");
 const inputsProductosCarrito = document.querySelectorAll(
   ".input-cantidad-en-carrito"
 );
+// const multiplicadorUnidadesCarrito = () => {
 
 const multiplicadorUnidadesCarrito = () => {
   for (let inputProductosCarritos of inputsProductosCarrito) {
-    for (let productoParaSumarImporte of listaProductosParaSumarImporte) {
-      let valorInputCarrito = inputProductosCarritos.value;
-      let precioProductoCarrito = productoParaSumarImporte.dataset.precio;
-      resultadoMultiplicacionProductoInput =
-        valorInputCarrito * precioProductoCarrito;
-      return resultadoMultiplicacionProductoInput;
-    }
+    subtotalCarrito = 0;
+    inputProductosCarritos.oninput = () => {
+      for (let productoParaSumarImporte of listaProductosParaSumarImporte) {
+        let valorInputCarrito = inputProductosCarritos.value;
+        let precioProductoCarrito = productoParaSumarImporte.dataset.precio;
+        subtotalCarrito =
+          subtotalCarrito + valorInputCarrito * precioProductoCarrito;
+        subtotalCarrito.textContent = subtotalCarrito;
+        subtotalCheckout.textContent = subtotalCheckout;
+        return subtotalCarrito;
+      }
+    };
   }
 };
-
-const sumaDeProductos = () => {
-  for (let productoParaSumarImporte of listaProductosParaSumarImporte) {
-    productoParaSumarImporte.dataset.precio = productoParaSumarImporte;
-  }
-};
-// const identificarPrecios = () => {
-//   for (let importeASumar of listaProductosParaSumarImporte){
-//     let precio = importeASumar.dataset.precio
-//     Number(precio) = precio
 
 //...............Inicio Mostrar/Ocultar Carrito Aside...............//
 const mostrarCarritoAside = () => {
@@ -81,6 +76,7 @@ const mostrarCarritoAside = () => {
 clickCarrito.onclick = () => {
   mostrarCarritoAside();
   contandoProductosCarrito();
+  multiplicadorUnidadesCarrito();
 };
 
 botonCerrarCarrito.onclick = () => {
@@ -161,7 +157,7 @@ const efectivo = document.querySelectorAll("input[value='efectivo-debito']");
 const credito = document.querySelector("input[value='tarjeta-credito']");
 const envioOpcion = document.querySelector("input[name='envio']");
 const tarjetaDescuento = document.querySelector("input[name='descuento']");
-let subtotal = document.querySelector(".subtotal-checkout-importe");
+
 const recargo = document.querySelector(".recargo-checkout-importe");
 const renglonEnvio = document.querySelector(".envio-checkout");
 const renglonRecargo = document.querySelector(".recargo-checkout");
@@ -172,8 +168,6 @@ const total = document.querySelector(".total-checkout-importe");
 const opcionesDePago = document.querySelectorAll(".metodos-de-pago");
 
 // el problema esta en la declaracion de subtotal que no reflej en el textcontent del carrito
-subtotal = 5540;
-subtotal.textContent = 5540;
 
 let subtotalNumero = Number(subtotal);
 
