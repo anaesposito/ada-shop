@@ -23,7 +23,8 @@ for (let botonComprarProducto of botonesComprarProducto) {
         tarjetaCarrito.classList.remove("ocultar");
         tarjetaCarrito.classList.add("sumar-importe");
         contandoProductosCarrito();
-        identificarPrecios()
+        // identificarPrecios();
+        multiplicadorUnidadesCarrito();
       }
     }
   };
@@ -43,14 +44,32 @@ const contandoProductosCarrito = () => {
 const listaProductosParaSumarImporte = document.getElementsByClassName(
   "tarjeta-carrito sumar-importe"
 );
-const subtotalTexto = document.querySelector("#subtotal-carrito-aside")
+const subtotalTexto = document.querySelector("#subtotal-carrito-aside");
+const inputsProductosCarrito = document.querySelectorAll(
+  ".input-cantidad-en-carrito"
+);
 
-const identificarPrecios = () => {
-  for (let importeASumar of listaProductosParaSumarImporte){
-    let precio = importeASumar.dataset.precio
-    Number(precio) = precio
-    
+const multiplicadorUnidadesCarrito = () => {
+  for (let inputProductosCarritos of inputsProductosCarrito) {
+    for (let productoParaSumarImporte of listaProductosParaSumarImporte) {
+      let valorInputCarrito = inputProductosCarritos.value;
+      let precioProductoCarrito = productoParaSumarImporte.dataset.precio;
+      resultadoMultiplicacionProductoInput =
+        valorInputCarrito * precioProductoCarrito;
+      return resultadoMultiplicacionProductoInput;
+    }
+  }
 };
+
+const sumaDeProductos = () => {
+  for (let productoParaSumarImporte of listaProductosParaSumarImporte) {
+    productoParaSumarImporte.dataset.precio = productoParaSumarImporte;
+  }
+};
+// const identificarPrecios = () => {
+//   for (let importeASumar of listaProductosParaSumarImporte){
+//     let precio = importeASumar.dataset.precio
+//     Number(precio) = precio
 
 //...............Inicio Mostrar/Ocultar Carrito Aside...............//
 const mostrarCarritoAside = () => {
