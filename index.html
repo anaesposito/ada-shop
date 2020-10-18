@@ -337,7 +337,7 @@
   <main class="checkout ocultar-checkout">
     <div class="contenedor-flex">
 
-      <form class="formulario-checkout" action="">
+      <form class="formulario-checkout" action="" method="POST" id="checkout-form">
         <div class="titulo-checkout" id="checkout-overlay">
           <h1>Checkout</h1>
         </div>
@@ -380,9 +380,9 @@
             </article>
           </div>
         </section>
-
-
       </form>
+
+
       <section class="resumen-checkout">
         <h5 class="titulo-resumen-checkout">Resumen</h5>
         <div>
@@ -407,7 +407,8 @@
     <footer class="footer-checkout">
       <button aria-label="Seguir comprando" class="botones-checkout" id="seguir-comprando-checkout">Seguir
         Comprando</button>
-      <button aria-label="Finalizar Compra" class="botones-checkout" id="finalizar-compra-checkout">Finalizar</button>
+      <button type="submit" value="submit" form="checkout-form" aria-label="Finalizar Compra" class="botones-checkout"
+        id="finalizar-compra-checkout">Finalizar</button>
     </footer>
 
   </main>
