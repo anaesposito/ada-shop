@@ -313,7 +313,7 @@ for (let botonComprarProducto of botonesComprarProducto) {
 const botonVaciarCarritoConfirmacion = document.querySelector(
   ".boton-vaciar-carrito-confirmacion"
 );
-//oculto tarjetas, me falta recalcular subtotales nuevamente y mostrando objetos
+
 botonVaciarCarritoConfirmacion.onclick = () => {
   for (let tarjetaCarrito of tarjetasCarrito) {
     tarjetaCarrito.classList.add("ocultar");
@@ -321,13 +321,10 @@ botonVaciarCarritoConfirmacion.onclick = () => {
     overlay.classList.remove("overlay-aumentado");
     actualizarSubtotales();
     contarProductosCarrito();
-
-    //aca tiene que ir una funcion general que arranque todas las cuentas
-    // de vuelta
   }
 };
 
-//...............Fin Vaciar Carrito Modal.............//
+//..................Fin Vaciar Carrito Modal.............//
 //..............Inicio Sumar Productos en Carrito........//
 
 const listaProductosParaSumarImporte = document.getElementsByClassName(
