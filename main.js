@@ -424,6 +424,7 @@ const botonSeguirComprandoCheckout = document.querySelector(
 const botonFinalizarCompraCheckout = document.querySelector(
   "#finalizar-compra-checkout"
 );
+console.log(botonComprarCarrito);
 
 botonComprarCarrito.onclick = () => {
   overlay.classList.add("overlay-aumentado");
@@ -437,16 +438,28 @@ botonFinalizarCompraCheckout.onclick = () => {
   body.classList.remove("overflow");
   overlay.classList.remove("overlay-aumentado");
 };
+//..............Inicio Limpiar Opcionesde pago...........//
+
+const opcionesDePago = document.querySelectorAll(".metodos-de-pago");
+
+const limpiarOpcionesDePago = () => {
+  for (let opcionDePago of opcionesDePago) {
+    opcionDePago.checked = false;
+    console.log(opcionDePago.checked);
+  }
+};
 
 botonSeguirComprandoCheckout.onclick = () => {
+  limpiarOpcionesDePago();
   carritoCheckout.classList.add("ocultar-checkout");
   overlay.classList.remove("overlay-aumentado");
 };
+//..............,,,Fin Limpiar Opcionesde pago...........//
 //..................Fin Carrito Checkout Display.........//
 
 //...........Inicio Carrito Checkout Operaciones.........//
 
-const efectivo = document.querySelectorAll("input[value='efectivo-debito']");
+const efectivo = document.querySelector("input[value='efectivo-debito']");
 const credito = document.querySelector("input[value='tarjeta-credito']");
 const envioOpcion = document.querySelector("input[name='envio']");
 const tarjetaDescuento = document.querySelector("input[name='descuento']");
@@ -457,13 +470,13 @@ const renglonDescuento = document.querySelector(".descuento-checkout");
 const descuento = document.querySelector(".descuento-checkout-importe");
 const envio = document.querySelector(".envio-checkout-importe");
 const total = document.querySelector(".total-checkout-importe");
-const opcionesDePago = document.querySelectorAll(".metodos-de-pago");
 
 for (let opcion of opcionesDePago) {
   opcion.oninput = () => {
     calcularTotal();
   };
 }
+
 let resultadoRecargo;
 
 const recargoTarjeta = (subtotal) => {
@@ -508,8 +521,12 @@ const recargoEnvio = () => {
 };
 
 const calcularTotal = (subtotal) => {
-  let totalReal = subtotal;
-  totalReal = subtotal + recargoEnvio() + aplicarDescuento() + recargoTarjeta();
+  let subtotalGuardadoEnSpan = Number(subtotalCheckoutImporte.textContent); // tomo el valor del subtotal calculado anteriormente
+  let totalReal = subtotalGuardadoEnSpan;
+  totalReal +=
+    recargoEnvio() +
+    aplicarDescuento(subtotalGuardadoEnSpan) +
+    recargoTarjeta(subtotalGuardadoEnSpan);
   total.textContent = totalReal;
   return totalReal;
 };
