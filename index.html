@@ -46,8 +46,8 @@
     <button aria-label="cerrar carrito" id="cerrar-carrito" class="cerrar-carrito"><i aria-hidden="true"
         class="fas fa-times-circle"></i></button>
     <h2 class="titulo-menu-carrito">Carrito</h2>
+    <p role="alert" class="alertas-contenido-carrito ocultar">No tienes productos en el carrito, ¡agrega algunos!</p>
     <div class="carrito-contenido">
-      <p class="alertas-contenido-carrito"></p>
       <p><span class="cantidad-productos-agregados">0</span> producto(s) agregados(s)</p>
       <section class="productos-agregados-carrito">
         <article class="tarjeta-carrito ocultar" data-nombre="auriculares-sony" data-precio="2355"
@@ -305,14 +305,15 @@
       </section>
 
 
+
+      <p class="subtotal-carrito-aside">Subtotal $<span id="subtotal-carrito-aside">0</span> </p>
+
+      <footer class="contenedor-botones-carrito">
+        <button arial-label="comprar productos agregados al carrito" class="boton-comprar-carrito"
+          id="comprar-carrito"><a href="#checkout-overlay">Comprar</a></button>
+        <button aria-label="vaciar carrito" class="boton-vaciar-carrito" id="vaciar-carrito">Vaciar</button>
+      </footer>
     </div>
-    <p class="subtotal-carrito-aside">Subtotal $<span id="subtotal-carrito-aside">0</span> </p>
-    </div>
-    <footer class="contenedor-botones-carrito">
-      <button arial-label="comprar productos agregados al carrito" class="boton-comprar-carrito" id="comprar-carrito"><a
-          href="#checkout-overlay">Comprar</a></button>
-      <button aria-label="vaciar carrito" class="boton-vaciar-carrito" id="vaciar-carrito">Vaciar</button>
-    </footer>
 
   </main>
   <!--------------------------------------------- Fin Carrito Aside --------------------------------------->

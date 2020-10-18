@@ -217,6 +217,7 @@ const mostrarCarritoAside = () => {
 clickCarrito.onclick = () => {
   mostrarCarritoAside();
   contarProductosCarrito();
+  hayProductosEnCarrito(productosVisiblesCarrito);
 };
 
 botonCerrarCarrito.onclick = () => {
@@ -293,6 +294,11 @@ const agregarProductoAlCarrito = (botonComprarProducto) => {
 const listaProductosEnCarritoOcultos = document.getElementsByClassName(
   "tarjeta-carrito ocultar"
 );
+const alertaContenidoCarrito = document.querySelector(
+  ".alertas-contenido-carrito"
+);
+const carritoSinContenido = document.querySelector(".carrito-contenido");
+console.log(carritoSinContenido);
 
 const contarProductosCarrito = () => {
   // actualiza indicador total de items en carrito
@@ -300,6 +306,16 @@ const contarProductosCarrito = () => {
     tarjetasCarrito.length - listaProductosEnCarritoOcultos.length;
   cantidadEnCarrito.textContent = productosVisiblesCarrito;
   itemsEnCarrito.textContent = productosVisiblesCarrito;
+};
+
+const hayProductosEnCarrito = () => {
+  if (productosVisiblesCarrito === 0) {
+    alertaContenidoCarrito.classList.remove("ocultar");
+    carritoSinContenido.classList.add("ocultar");
+  } else {
+    carritoSinContenido.classList.remove("ocultar");
+    alertaContenidoCarrito.classList.add("ocultar");
+  }
 };
 
 for (let botonComprarProducto of botonesComprarProducto) {
@@ -321,6 +337,7 @@ botonVaciarCarritoConfirmacion.onclick = () => {
     overlay.classList.remove("overlay-aumentado");
     actualizarSubtotales();
     contarProductosCarrito();
+    hayProductosEnCarrito(productosVisiblesCarrito);
   }
 };
 

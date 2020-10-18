@@ -140,10 +140,12 @@ p {
   font-size: 2em;
   margin: 5% 5% 0;
 }
-
+.alertas-contenido-carrito {
+  margin-top: 20%;
+}
 .carrito-contenido {
   display: flex;
-  max-height: 50%;
+  max-height: 90%;
   flex-direction: column;
   margin: 30px;
 }
@@ -203,8 +205,7 @@ p {
   margin-left: 10%;
 }
 .productos-agregados-carrito {
-  overflow: scroll;
-  max-height: 500px;
+  overflow: auto;
   margin-top: 20px;
 }
 
@@ -864,6 +865,8 @@ p {
   }
   .footer-checkout {
     margin: 10px 0 60px;
+    flex-direction: column;
+    align-items: center;
   }
   .vaciar-carrito-section {
     width: 100%;
@@ -873,6 +876,9 @@ p {
     justify-content: center;
     top: 0%;
     right: 0%;
+  }
+  #finalizar-compra-checkout {
+    margin: 0;
   }
 }
 
@@ -1079,8 +1085,5 @@ p {
   .tarjeta {
     width: calc(100% / 3 - 3 * 10px);
     min-width: auto;
-  }
-  .carrito-contenido {
-    max-height: 50%;
   }
 }
