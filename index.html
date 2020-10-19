@@ -337,7 +337,7 @@
   <main class="checkout ocultar-checkout">
     <div class="contenedor-flex">
 
-      <form class="formulario-checkout" action="" method="POST" id="checkout-form">
+      <form class="formulario-checkout" action="" method="POST" enctype="text/plain" id="checkout-form">
         <div class="titulo-checkout" id="checkout-overlay">
           <h1>Checkout</h1>
         </div>
@@ -387,19 +387,19 @@
         <h5 class="titulo-resumen-checkout">Resumen</h5>
         <div>
           <p class="subtotal-checkout">
-            Subtotal $ <span class="subtotal-checkout-importe">0</span>
+            Subtotal $<span class="subtotal-checkout-importe">0</span>
           </p>
           <p class="descuento-checkout">
             Descuento 10% $<span class="descuento-checkout-importe">0</span>
           </p>
           <p class="envio-checkout">
-            Envío $ <span class="envio-checkout-importe">0</span>
+            Envío <span class="envio-checkout-importe">0</span>
           </p>
           <p class="recargo-checkout">
-            Recargo $ <span class="recargo-checkout-importe">0</span>
+            Recargo <span class="recargo-checkout-importe">0</span>
           </p>
           <p class="total-checkout"">
-                Total:$ <span class=" total-checkout-importe">0</span>
+                Total: <span class=" total-checkout-importe">0</span>
           </p>
         </div>
       </section>
@@ -407,7 +407,7 @@
     <footer class="footer-checkout">
       <button aria-label="Seguir comprando" class="botones-checkout" id="seguir-comprando-checkout">Seguir
         Comprando</button>
-      <button type="submit" value="submit" form="checkout-form" aria-label="Finalizar Compra" class="botones-checkout"
+      <button type="submit" form="checkout-form" aria-label="Finalizar Compra" class="botones-checkout"
         id="finalizar-compra-checkout">Finalizar</button>
     </footer>
 
@@ -464,7 +464,8 @@
       <div class="contenedor-filtro-puntaje">
         <h3 class="titulo-puntaje">Puntaje</h3>
         <label for="5-estrellas">
-          <input type="checkbox" name="cinco-estrellas" value="5" id="5-estrellas" class="check-filtro-puntaje" />
+          <input tabindex="-1" type="checkbox" name="cinco-estrellas" value="5" id="5-estrellas"
+            class="check-filtro-puntaje" />
           <i aria-hidden="true" class="fas fa-star"></i>
           <i aria-hidden="true" class="fas fa-star"></i>
           <i aria-hidden="true" class="fas fa-star"></i>

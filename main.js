@@ -218,33 +218,99 @@ clickCarrito.onclick = () => {
   mostrarCarritoAside();
   contarProductosCarrito();
   hayProductosEnCarrito(productosVisiblesCarrito);
+  modificarTabIndex(true);
 };
 
 botonCerrarCarrito.onclick = () => {
   asideCarrito.classList.add("hidden");
   overlay.classList.add("ocultar");
   body.classList.remove("overflow");
+  modificarTabIndex(false);
 };
 
 //................Fin Ocultar Carrito Aside..............//
 
-//...............Inicio Vaciar Carrito Aside.............//
+// -----------------------------------------Inicio Modificacion Tabindex ---------------------------------------------//
 
-const vaciarCarrito = document.querySelector("#vaciar-carrito");
-const cancelarVaciarCarrito = document.querySelector(
-  ".boton-cancelar-vaciar-carrito"
-);
-const vaciarCarritoSection = document.querySelector(".vaciar-carrito-section");
+const disminuirTabIndexFiltroPuntaje = (removerTab) => {
+  for (let inputFiltros of checkboxesPuntaje) {
+    if (removerTab == true) {
+      inputFiltros.setAttribute("tabIndex", -1);
+    } else {
+      inputFiltros.removeAttribute("tabIndex", -1);
+    }
+  }
+};
+const disminuirTabIndexFiltroCategoria = (removerTab) => {
+  for (let inputFiltros of checkboxesCategoria) {
+    if (removerTab == true) {
+      inputFiltros.setAttribute("tabIndex", -1);
+    } else {
+      inputFiltros.removeAttribute("tabIndex", -1);
+    }
+  }
+};
 
-vaciarCarrito.onclick = () => {
-  vaciarCarritoSection.classList.remove("hidden");
-  overlay.classList.add("overlay-aumentado");
+const disminuirTabIndexBotonComprarProducto = (removerTab) => {
+  for (let botonComprarProducto of botonesComprarProducto) {
+    if (removerTab == true) {
+      botonComprarProducto.setAttribute("tabIndex", -1);
+    } else {
+      botonComprarProducto.removeAttribute("tabIndex", -1);
+    }
+  }
 };
-cancelarVaciarCarrito.onclick = () => {
-  vaciarCarritoSection.classList.add("hidden");
-  overlay.classList.remove("overlay-aumentado");
+
+const linksFooter = document.querySelectorAll(".link-footer");
+
+const disminuirTabIndexLinksFooter = (removerTab) => {
+  for (let link of linksFooter) {
+    if (removerTab == true) {
+      link.setAttribute("tabIndex", -1);
+    } else {
+      link.removeAttribute("tabIndex", -1);
+    }
+  }
 };
-//......................Fin Vaciar Carrito Aside.........//
+
+const disminuirTabIndexProductoCarritoOculto = (removerTab) => {
+  for (let boton of document.querySelectorAll(".eliminar-de-carrito")) {
+    let tarjetaPadre = boton.parentNode.parentNode.parentNode;
+    if (tarjetaPadre.className.includes("ocultar")) {
+      if (removerTab == true) {
+        boton.setAttribute("tabIndex", -1);
+      } else {
+        boton.removeAttribute("tabIndex", -1);
+      }
+    }
+  }
+};
+
+const modificarTabIndex = (removerTab) => {
+  if (removerTab == true) {
+    limpiarBusqueda.setAttribute("tabIndex", -1);
+    cajaBusqueda.setAttribute("tabIndex", -1);
+    modoDiurno.setAttribute("tabIndex", -1);
+    clickCarrito.setAttribute("tabIndex", -1);
+    botonVistaGrilla.setAttribute("tabIndex", -1);
+    botonVistaLista.setAttribute("tabIndex", -1);
+  } else {
+    limpiarBusqueda.removeAttribute("tabIndex", -1);
+    cajaBusqueda.removeAttribute("tabIndex", -1);
+    modoDiurno.removeAttribute("tabIndex", -1);
+    clickCarrito.removeAttribute("tabIndex", -1);
+    botonVistaGrilla.removeAttribute("tabIndex", -1);
+    botonVistaLista.removeAttribute("tabIndex", -1);
+  }
+  disminuirTabIndexLinksFooter(removerTab);
+  disminuirTabIndexBotonComprarProducto(removerTab);
+  disminuirTabIndexFiltroCategoria(removerTab);
+  disminuirTabIndexFiltroPuntaje(removerTab);
+
+  disminuirTabIndexProductoCarritoOculto(removerTab);
+};
+
+// -----------------------------------------Fin Modificacion Tabindex ---------------------------------------------//
 
 // ------------------------------ Inicio Contador productos visibles seccion principal-------------------------------//
 
@@ -272,17 +338,22 @@ const cantidadProductosVisiblesMain = () => {
 };
 
 // ------------------------------------- Fin Contador productos visibles seccion principal --------------------------//
+
 //.........Inicio Agregar Productos en Carrito...........//
+const sumarInputAlConteo = (tarjetaCarrito) => {
+  // busco dentro de esta tarjeta el input de cantidad de producto
+  let inputProductoEnCarrito =
+    tarjetaCarrito.lastElementChild.lastElementChild.firstElementChild
+      .firstElementChild;
+  inputProductoEnCarrito.classList.add("sumar-importe");
+  inputProductoEnCarrito.removeAttribute("tabIndex", -1);
+};
 
 const agregarProductoAlCarrito = (botonComprarProducto) => {
   for (let tarjetaCarrito of tarjetasCarrito) {
     if (tarjetaCarrito.dataset.nombre === botonComprarProducto.dataset.nombre) {
       tarjetaCarrito.classList.remove("ocultar");
-      // busco dentro de esta tarjeta el input de cantidad de producto
-      let inputProductoEnCarrito =
-        tarjetaCarrito.lastElementChild.lastElementChild.firstElementChild
-          .firstElementChild;
-      inputProductoEnCarrito.classList.add("sumar-importe");
+      sumarInputAlConteo(tarjetaCarrito);
       calcularSubTotal();
       contarProductosCarrito();
     }
@@ -298,7 +369,6 @@ const alertaContenidoCarrito = document.querySelector(
   ".alertas-contenido-carrito"
 );
 const carritoSinContenido = document.querySelector(".carrito-contenido");
-console.log(carritoSinContenido);
 
 const contarProductosCarrito = () => {
   // actualiza indicador total de items en carrito
@@ -330,18 +400,41 @@ const botonVaciarCarritoConfirmacion = document.querySelector(
   ".boton-vaciar-carrito-confirmacion"
 );
 
-botonVaciarCarritoConfirmacion.onclick = () => {
+const removerProductosDelCarrito = () => {
   for (let tarjetaCarrito of tarjetasCarrito) {
     tarjetaCarrito.classList.add("ocultar");
     vaciarCarritoSection.classList.add("hidden");
     overlay.classList.remove("overlay-aumentado");
-    actualizarSubtotales();
+
+    removerInputDelConteo(tarjetaCarrito);
+    actualizarSubtotales(0);
     contarProductosCarrito();
-    hayProductosEnCarrito(productosVisiblesCarrito);
+    hayProductosEnCarrito();
   }
 };
 
+botonVaciarCarritoConfirmacion.onclick = () => removerProductosDelCarrito();
 //..................Fin Vaciar Carrito Modal.............//
+
+//...............Inicio Confirmación Vaciar Carrito Aside.............//
+
+const vaciarCarrito = document.querySelector("#vaciar-carrito");
+const cancelarVaciarCarrito = document.querySelector(
+  ".boton-cancelar-vaciar-carrito"
+);
+const vaciarCarritoSection = document.querySelector(".vaciar-carrito-section");
+
+vaciarCarrito.onclick = () => {
+  vaciarCarritoSection.classList.remove("hidden");
+  overlay.classList.add("overlay-aumentado");
+};
+
+cancelarVaciarCarrito.onclick = () => {
+  vaciarCarritoSection.classList.add("hidden");
+  overlay.classList.remove("overlay-aumentado");
+};
+//......................Fin Vaciar Carrito Aside.........//
+
 //..............Inicio Sumar Productos en Carrito........//
 
 const listaProductosParaSumarImporte = document.getElementsByClassName(
@@ -394,16 +487,22 @@ const eliminarProductosEnCarrito = document.querySelectorAll(
   ".eliminar-de-carrito"
 );
 
+const removerInputDelConteo = (tarjetaCarrito) => {
+  // busco dentro de esta tarjeta el input de cantidad de producto
+  let inputProductoEnCarrito =
+    tarjetaCarrito.lastElementChild.lastElementChild.firstElementChild
+      .firstElementChild;
+  inputProductoEnCarrito.classList.remove("sumar-importe");
+  inputProductoEnCarrito.setAttribute("tabIndex", -1);
+  inputProductoEnCarrito.value = 1;
+};
+
 for (let eliminarProducto of eliminarProductosEnCarrito) {
   eliminarProducto.onclick = () => {
     for (tarjetaCarrito of tarjetasCarrito) {
       if (eliminarProducto.dataset.nombre === tarjetaCarrito.dataset.nombre) {
         tarjetaCarrito.classList.add("ocultar");
-        // busco dentro de esta tarjeta el input de cantidad de producto
-        let inputProductoEnCarrito =
-          tarjetaCarrito.lastElementChild.lastElementChild.firstElementChild
-            .firstElementChild;
-        inputProductoEnCarrito.classList.remove("sumar-importe");
+        removerInputDelConteo(tarjetaCarrito);
         calcularSubTotal();
         contarProductosCarrito();
       }
@@ -424,11 +523,11 @@ const botonSeguirComprandoCheckout = document.querySelector(
 const botonFinalizarCompraCheckout = document.querySelector(
   "#finalizar-compra-checkout"
 );
-console.log(botonComprarCarrito);
 
 botonComprarCarrito.onclick = () => {
   overlay.classList.add("overlay-aumentado");
   carritoCheckout.classList.remove("ocultar-checkout");
+  calcularTotal();
 };
 
 botonFinalizarCompraCheckout.onclick = () => {
@@ -437,6 +536,11 @@ botonFinalizarCompraCheckout.onclick = () => {
   overlay.classList.add("ocultar");
   body.classList.remove("overflow");
   overlay.classList.remove("overlay-aumentado");
+  totalCheckout.textContent = 0;
+  modificarTabIndex(false);
+  limpiarOpcionesDePago();
+  removerProductosDelCarrito();
+  alert("Gracias por su compra!!");
 };
 //..............Inicio Limpiar Opcionesde pago...........//
 
@@ -445,7 +549,6 @@ const opcionesDePago = document.querySelectorAll(".metodos-de-pago");
 const limpiarOpcionesDePago = () => {
   for (let opcionDePago of opcionesDePago) {
     opcionDePago.checked = false;
-    console.log(opcionDePago.checked);
   }
 };
 
@@ -469,7 +572,7 @@ const renglonRecargo = document.querySelector(".recargo-checkout");
 const renglonDescuento = document.querySelector(".descuento-checkout");
 const descuento = document.querySelector(".descuento-checkout-importe");
 const envio = document.querySelector(".envio-checkout-importe");
-const total = document.querySelector(".total-checkout-importe");
+const totalCheckout = document.querySelector(".total-checkout-importe");
 
 for (let opcion of opcionesDePago) {
   opcion.oninput = () => {
@@ -483,7 +586,7 @@ const recargoTarjeta = (subtotal) => {
   if (credito.checked) {
     resultadoRecargo = subtotal * 0.1;
 
-    recargo.textContent = resultadoRecargo;
+    recargo.textContent = "$" + resultadoRecargo.toFixed(2);
     renglonRecargo.classList.remove("ocultar");
   } else {
     resultadoRecargo = 0;
@@ -497,7 +600,7 @@ let resultadoDescuento;
 const aplicarDescuento = (subtotal) => {
   if (tarjetaDescuento.checked) {
     resultadoDescuento = -subtotal * 0.05;
-    descuento.textContent = resultadoDescuento;
+    descuento.textContent = "$" + resultadoDescuento.toFixed(2); // redondedo dos decimales.
     renglonDescuento.classList.remove("ocultar");
   } else {
     resultadoDescuento = 0;
@@ -511,7 +614,7 @@ let resultadoEnvio;
 const recargoEnvio = () => {
   if (envioOpcion.checked) {
     resultadoEnvio = 300;
-    envio.textContent = resultadoEnvio;
+    envio.textContent = "$" + resultadoEnvio;
     renglonEnvio.classList.remove("ocultar");
   } else {
     resultadoEnvio = 0;
@@ -520,14 +623,14 @@ const recargoEnvio = () => {
   return resultadoEnvio;
 };
 
-const calcularTotal = (subtotal) => {
+const calcularTotal = () => {
   let subtotalGuardadoEnSpan = Number(subtotalCheckoutImporte.textContent); // tomo el valor del subtotal calculado anteriormente
   let totalReal = subtotalGuardadoEnSpan;
   totalReal +=
     recargoEnvio() +
     aplicarDescuento(subtotalGuardadoEnSpan) +
     recargoTarjeta(subtotalGuardadoEnSpan);
-  total.textContent = totalReal;
+  totalCheckout.textContent = "$" + totalReal;
   return totalReal;
 };
 
