@@ -685,6 +685,7 @@ modoDiurno.onclick = () => {
         cancelarVaciarCarrito.classList.add("boton-modo-nocturno");
         botonVaciarCarritoConfirmacion.classList.remove("nocturno");
         botonVaciarCarritoConfirmacion.classList.add("boton-modo-nocturno");
+        asideFiltros.style.backgroundColor = "black";
       }
     }
   }
@@ -709,6 +710,7 @@ modoNocturno.onclick = () => {
         vaciarCarritoSection.classList.remove("nocturno");
         cancelarVaciarCarrito.classList.remove("boton-modo-nocturno");
         botonVaciarCarritoConfirmacion.classList.remove("boton-modo-nocturno");
+        asideFiltros.style.backgroundColor = "#fff";
       }
     }
   }
